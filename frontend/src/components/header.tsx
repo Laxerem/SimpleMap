@@ -1,17 +1,12 @@
-import styles from './header.module.css'
+import './header.css'
 
 const Header = () => {
     return (
         <header>
-                <div className={styles.initials_container}>
-                    <div id={styles.logo}></div>
-                    <a href="">HOME</a>
-                </div>
-                <div className={styles.catalog}>
-                    <a id='statistics' href="/statistics">Statistics</a>
-                    <a id='sensors' href="/sensors">Sensors</a>
-                    <a id='settings' href="/settings">Settings</a>
-                </div>
+            <div className='header_container'>
+                <div className='logo image'/>
+                <div className='catalog image' />
+            </div>
         </header>
     )
 }

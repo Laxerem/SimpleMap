@@ -1,0 +1,387 @@
+:root {
+    /* РАЗМЕРЫ КОНТЕЙНЕРОВ*/
+    --home-preview-height: 90vh;
+
+    /* РАЗМЕРЫ ТЕКСТА */
+    --home-name: 9vw;
+    --navigation-text: 1.3vw;
+    --heading-size: 4vw;
+    --text-size: 1.1vw;
+
+    /* ЦВЕТА */
+    --main_color: #0A2131;
+    --name_color: #FFFFFF;
+    --heading_color: #63C1F1;
+    --text_color: #CBE7EF;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+html {
+    background-color: var(--main_color);
+}
+
+
+img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+line {
+    border: 1.5px solid #63C1F1;
+    height: 50px;
+}
+
+h1 {
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--home-name);
+    color: var(--name_color);
+}
+
+h2 {
+    font-family: 'Bad Script', sans-serif;
+    font-size: var(--heading-size);
+    font-weight: 400;
+    color: var(--heading_color);
+    line-height: 110%;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text_color);
+    font-size: var(--text-size);
+}
+
+/* ------------------Фотографии---------------------------- */
+
+.antarctica {
+    background-image: url(../../../public/Antarctica.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.belling {
+    background-image: url(../../../public/Bellingshausen.png);
+    border-radius: 0px 120px 0px 0px;
+}
+
+.lazar {
+    background-image: url(../../../public/Lazarev.png);
+    border-radius: 0px 0px 0px 120px;
+    justify-self: flex-end;
+}
+
+.discover .image {
+    background-size: 100%;
+    width: 80%;
+    min-width: 70px;
+}
+
+.antarctica_card {
+    max-width: 36%;
+}
+
+/* ---------------------------------------------------------- */
+
+.home_preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: var(--home-preview-height);
+    transition: 0.5s;
+    -webkit-box-shadow: inset 0px -148px 59px -63px rgba(10,33,49,1);
+    -moz-box-shadow: inset 0px -148px 59px -63px rgba(10,33,49,1);
+    box-shadow: inset 0px -148px 59px -63px rgba(10,33,49,1);
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    top:25%;
+    width: 100%;
+}
+
+.home_name {
+    font-family: 'Bad Script';
+    font-weight: 400;
+    line-height: 110%;
+}
+
+.home_navigation {
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    width: 60%;
+}
+
+.navigation_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    transition: 0.5s;
+    min-height: 65px;
+    background-color: rgb(203, 231, 239, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.block_navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 60%;
+    border-radius: 14px;
+    color: white;
+    font-weight: 100;
+    font-size: var(--navigation-text);
+    background: linear-gradient(180deg, rgba(7, 19, 31, 0.6) 29%, rgba(0, 65, 100, 0.6) 100%);
+    transition: 1s;
+}
+
+.russia_map {
+    background: 
+      linear-gradient(180deg, rgba(7, 19, 31, 0.6) 29%, rgba(0, 65, 100, 0.6) 100%), 
+      url(../../../public/transparent_russia.png);
+    background-size: 110%;
+    background-position: center;
+}
+
+.block_navigation:hover {
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 2px solid black;
+    background-position: 1100%;
+}
+
+.home_preview_shadow {
+    position: relative;
+    -webkit-box-shadow: 0px -75px 143px 11px rgba(10,33,49,0.9);
+    -moz-box-shadow: 0px -75px 143px 11px rgba(10,33,49,0.9);
+    box-shadow: 0px -75px 143px 11px rgba(10,33,49,0.9);
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+}
+
+.discoverers {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3%;
+    margin-top: 50px;
+}
+
+.discover {
+    display: grid;
+    grid-template-rows: 5.5fr 1fr;
+    h2 {
+        text-align: center;
+        margin-top: 7%;
+        font-size: 2.5vw;
+        color: white;
+    }
+}
+
+.discoverers_text {
+    text-align: center;
+}
+
+.discoverers_text_content {
+    margin-top: 30px;
+}
+
+.about_antarctica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+}
+
+.about_antarctica_content {
+    display: flex;
+    justify-content: center;
+    gap:10%;
+    margin: 70px 5% 0px 5%;
+    transition: 1s;
+}
+
+.antarctica_text {
+    width: 40%;
+    h2 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+}
+
+.antarctica_facts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #07131F; /* Базовый цвет */
+    border-radius: 14px;
+    height: 120px;
+    width: 90%;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: 17vh;
+    max-height: 150px;
+    transition: 1s;
+}
+
+.antarctica_facts::before {
+    content: ''; /* Пустой контент для псевдоэлемента */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; /* Ширина для движения */
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        #07131F,
+        #63c2f145,
+        #07131F
+    );
+    animation: gradientMove 8s linear infinite;
+    z-index: 1; /* Градиент под текстом */
+}
+
+.facts {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+    animation: move 20s linear infinite;
+    position: relative; /* Текст поверх градиента */
+    z-index: 2; /* Выше градиента */
+}
+
+.facts p {
+    font-size: 1.8vw;
+    margin: 0 15px;
+    color: white; /* Явно задаем цвет текста */
+}
+
+.facts line {
+    height: 32px;
+    background: white;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(130%);
+    }
+    100% {
+        transform: translateX(-130%);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* Адаптивность */
+
+@media (max-width: 1000px) {
+    :root {
+        --home-name: 10vw;
+    }
+    .antarctica_facts {
+        height: 13vh;
+    }
+}
+
+@media (max-width: 800px) {
+    :root {
+        --home-preview-height: 70vh;
+    }
+    .antarctica_facts {
+        height: 11vh;
+    }
+    .navigation_container {
+        height: 10vh;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --home-preview-height: 60vh;
+        --home-name: 10vw;
+        --heading-size: 5vw;
+        --text-size: 1.7vw;
+    }
+    .content {
+        height: 55%;
+    }
+    .home_navigation {
+        width: 90%;
+    }
+    .block_navigation {
+        width: 28%;
+    }
+    .about_antarctica_content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .antarctica_card {
+        max-width: 50%;
+    }
+    .antarctica_text {
+        margin-top: 20px;
+        width: 75%;
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+    .antarctica_facts {
+        height: 9vh;
+    }
+}
+
+@media (max-width: 450px) {
+    :root {
+        --home-preview-height: 50vh;
+        --home-name: 50px;
+    }
+    .content {
+        height: 45%;
+    }
+    .discoverers .image {
+        height: 150px;
+    }
+    .discover {
+        width: 100%;
+    }
+    .antarctica_facts {
+        height: 6vh;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --home-name: 50px;
+    }
+    .discoverers .image {
+        height: 130px;
+    }
+    .block_navigation {
+        width: 30%;
+        font-size: 2vw;
+    }
+}
+
