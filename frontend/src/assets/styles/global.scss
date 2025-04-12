@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+%default_heading_params {
+    font-weight: 400;
+    line-height: 110%;
+}
+
+:root {
+    /* РАЗМЕРЫ ТЕКСТА */
+    --heading-2-size: clamp(2rem, 5vw + 5vh, 3vw);
+    --heading-3-size: clamp(1.3rem, 5vw + 5vh, 2.2vw);
+    --text-size: clamp(0.8rem, 5vw + 4vh, 1.2vw);
+
+    /* ЦВЕТА */
+    --main_color: #0A2131;
+    --heading_2_color: #63C1F1;
+    --heading_3_color: #CBE7EF;
+    --text_color: #CBE7EF;
+}
+
+html, body {
+    background-color: var(--main_color);
+}
+
+h1 {
+    font-family: 'Bad Script';
+    @extend %default_heading_params;
+}
+
+h2 {
+    font-family: 'Bad Script';
+    color: var(--heading_2_color);
+    @extend %default_heading_params;
+    font-size: var(--heading-2-size);
+}
+
+h3 {
+    font-family: 'Bad Script';
+    color: var(--heading_3_color);
+    @extend %default_heading_params;
+    font-size: var(--heading-3-size);
+}
+
+h4 {
+    font-family: 'Montserrat';
+    color: var(--heading_3_color);
+    @extend %default_heading_params;
+}
+
+p {
+    font-family: 'Montserrat';
+    color: var(--text_color);
+    font-size: var(--text-size);
+}
+
+.image {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+%default_background_image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin flex_column($justify:center, $align:center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: column;
+}
+
+@mixin flex_default($justify:center, $align:center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.block_text {
+    h2 {
+        text-align: center;
+    }
+    p {
+        margin-top: 20px;
+    }
+    width: 45%;
+}
+
+@font-face {
+    font-family: 'Bad Script';
+    src: url(../fonts/Bad_Script/BadScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+    font-weight: 300;
+}

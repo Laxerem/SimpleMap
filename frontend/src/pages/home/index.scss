@@ -1,0 +1,302 @@
+@import '../../assets/styles/global.scss';
+
+:root {
+    /* РАЗМЕРЫ КОНТЕЙНЕРОВ*/
+    --home-preview-height: 90vh;
+
+    /* РАЗМЕРЫ ТЕКСТА */
+    --home-name-size-min: 6rem;
+    --home-name-size-max: 14vw;
+    --navigation-text-size: 1.3vw;
+    --facts-size: clamp(1.1rem, 3vw + 5vh, 1.7vw);
+
+    /* ЦВЕТА */
+    --name_color: #FFFFFF;
+    --discovers_mobile_border_color: #63C1F1;
+    --facts_line_color: #63C1F1;
+
+    /* discovers */
+    --dis_height: calc(20vh + 15vw);
+    --dis_width: calc(10vh + 15vw);
+    --dis_min-width: 160px;
+}
+
+/* Фотографии */
+
+%discovers {
+    box-sizing: border-box;
+    height: var(--dis_height);
+    width: var(--dis_width);
+    min-width: var(--dis_min-width);
+    margin-bottom: 10%;
+    padding: 5%
+}
+
+.antarctica {
+    @extend %default_background_image;
+    background-image: url(../../../public/Antarctica.png);
+}
+
+.belling {
+    @extend %default_background_image;
+    @extend %discovers;
+    background-image: url(../../../public/Bellingshausen.png);
+    border-radius: 0px 35% 0px 0px;
+}
+
+.lazar {
+    @extend %default_background_image;
+    @extend %discovers;
+    background-image: url(../../../public/Lazarev.png);
+    border-radius: 0px 0px 0px 35%;
+}
+
+.antarctica_card {
+    height: calc(25vh + 20vw);
+    min-height: 100px;
+    max-width: 100%;
+}
+
+/*------------*/
+
+.preview {
+    @include flex_column(flex-end);
+    box-sizing: border-box;
+    gap: 10%;
+    transition: 0.5s;
+    height: var(--home-preview-height);
+    padding: 0px 0px 10vh 0px;
+    -webkit-box-shadow: inset 0px -148px 59px -63px rgba(10,33,49,1);
+    -moz-box-shadow: inset 0px -148px 59px -63px rgba(10,33,49,1);
+    box-shadow: inset 0px -148px 59px -63px rgba(10,33,49,1);
+}
+
+.home_name {
+    color: var(--name_color);
+    font-size: clamp(var(--home-name-size-min), 4vw + 10vh, var(--home-name-size-max));
+}
+
+.home_navigation {
+    @include flex_default(space-around);
+    height: clamp(1vh, 8vw + 4vh, 15vh);
+    width: 50%;
+    background-color: rgb(203, 231, 239, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    transition: 0.5s;
+}
+
+.home_navigation span {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: clamp(0.5rem, 1vw + 1.5vh, 6rem);
+    color: white;
+}
+
+.block_navigation {
+    @include flex_default;
+    width: 35%;
+    height: 60%;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(7, 19, 31, 0.6) 29%, rgba(0, 65, 100, 0.6) 100%);
+    transition: 1s;
+}
+
+.discoverers_container {
+    @include flex_default(space-between, flex-start);
+    gap: 5%;
+    margin-top: 11vh;
+}
+
+.discover {
+    h3 {
+        text-align: center;
+    }
+}
+
+.discover_image_content {
+    display: none;
+    color: var(--text_color);
+}
+
+.discoverers_content {
+    width: 45%;
+}
+
+.antarctica_facts {
+    @include flex_column; 
+    gap: 5vh;
+}
+
+.antarctica_content {
+    @include flex_default($align: flex-start);
+    box-sizing: border-box;
+    padding: 0 2%;
+    gap: 5%;
+    margin-top: 7%;
+}
+
+.block_facts {
+    @include flex_default;
+    background: #07131F; /* Базовый цвет */
+    border-radius: 14px;
+    width: 90%;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    height: clamp(4vh, 5vw + 7vh, 15vh);
+    transition: 1s;
+}
+
+.block_facts::before {
+    content: ''; /* Пустой контент для псевдоэлемента */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%; /* Ширина для движения */
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        #07131F,
+        #63c2f145,
+        #07131F
+    );
+    animation: gradientMove 8s linear infinite;
+    z-index: 1; /* Градиент под текстом */
+}
+
+.facts {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+    animation: move 20s linear infinite;
+    position: relative; /* Текст поверх градиента */
+    z-index: 2; /* Выше градиента */
+}
+
+.facts p {
+    font-size: var(--facts-size);
+    font-weight: 700;
+    margin: 0 15px;
+}
+
+.facts line {
+    height: var(--facts-size);
+    width: 0.1vw;
+    background: var(--facts_line_color);
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.prehistory_content {
+    @include flex_default($align: flex-start);
+    padding: 10% 2% 10% 2%;
+    margin-bottom: 8%;
+    gap:5%;
+    margin-top: 5%;
+    border-radius: 50% 50% 0 0;
+    background-color: #07131F;
+    @extend %default_background_image;
+    background-image: url(../../../public/waves.svg);
+    background-position: bottom;
+    background-size: 100%
+}
+
+.home_footer {
+    @include flex_column;
+    background-color: #07131F;
+    color: rgba(10, 33, 49, 0.5);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: 1vw;
+    font-size: 7vw;
+    padding: 2% 0;
+}
+
+.home_footer:nth-child(1) {
+    letter-spacing: 200%;
+}
+
+
+
+@keyframes move {
+    0% {
+        transform: translateX(130%);
+    }
+    100% {
+        transform: translateX(-130%);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media(max-width: 700px) {
+    :root {
+        --home-preview-height: 80vh;
+        --home-name-size-min: 3rem;
+
+        --dis_height: calc(20vh + 15vw);
+        --dis_width: calc(10vh + 15vw);
+        --dis_min-width: 100px;
+    }
+    .discoverers_mob {
+        @include flex_default(space-between, flex-start);
+        box-sizing: border-box;
+        gap: 2%;
+        padding: 0 3%;
+        width: 100%;
+        margin-bottom: 10%;
+    }
+
+    %discovers {
+        border: 2px solid var(--discovers_mobile_border_color);
+    }
+    .home_navigation {
+        width: 70%;
+    }
+    .discoverers_container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .block_text {
+        padding-top: 20px;
+        width: 70%;
+    }
+    .prehistory_content {
+        flex-direction: column-reverse;
+        align-items: center;
+        border-radius: 50% 50% 0 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .antarctica_content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .block_text {
+        padding-top: 30px;
+    }
+}
+
+@media(max-width: 500px) {
+    :root {
+        --home-preview-height: 60vh;
+    }
+    .block_text {
+        width: 90%;
+    }
+    .block_text {
+        padding-top: 40px;
+    }
+}
