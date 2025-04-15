@@ -1,22 +1,48 @@
-export type Preview_info = {
-  delay: Number,
-  image_directory: String
-}
+import { useNavigate } from 'react-router-dom';
 
-const Home_presentation: React.FC<React.PropsWithChildren<{info: Preview_info}>> = ({info}) => {
+export type PreviewInfo = {
+  delay: number;
+  image_directory: string;
+};
+
+type BlockNavigation = {
+  name: string;
+  link: string;
+  classname: string;
+};
+
+const HomePresentation: React.FC<React.PropsWithChildren<{ info: PreviewInfo }>> = ({ info }) => {
+  const navigate = useNavigate();
+
+  const blocks: BlockNavigation[] = [
+    {
+      name: 'Карта',
+      link: '/map',
+      classname: 'block_navigation background_map',
+    },
+    {
+      name: 'Атлас',
+      link: '/atlas',
+      classname: 'block_navigation',
+    }
+    // сюда можно добавлять другие блоки
+  ];
+
   return (
-  <div className='preview antarctica'>
-    <h1 className='home_name'>Открытие <br></br>Антарктиды</h1>
-    <div className='home_navigation'>
-      <div className='block_navigation russia_map'>
-        <span>Карта</span>
-      </div>
-      <div className='block_navigation'>
-        <span>Атлас</span>
+    <div className="preview antarctica">
+      <h1 className="home_name">
+        Открытие <br />
+        Антарктиды
+      </h1>
+      <div className="home_navigation">
+        {blocks.map((block, index) => (
+          <div key={index} onClick={() => navigate(block.link)} className={block.classname}>
+            <span>{block.name}</span>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-)
-}
+  );
+};
 
-export default Home_presentation
+export default HomePresentation;

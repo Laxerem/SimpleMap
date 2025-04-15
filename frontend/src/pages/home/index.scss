@@ -1,4 +1,4 @@
-@import '../../assets/styles/global.scss';
+@use '../../assets/styles/global.scss' as *;
 
 :root {
     /* РАЗМЕРЫ КОНТЕЙНЕРОВ*/
@@ -95,11 +95,31 @@
 
 .block_navigation {
     @include flex_default;
+    box-sizing: border-box;
     width: 35%;
     height: 60%;
+    min-height: 40px;
     border-radius: 14px;
     background: linear-gradient(180deg, rgba(7, 19, 31, 0.6) 29%, rgba(0, 65, 100, 0.6) 100%);
-    transition: 1s;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.block_navigation:hover {
+    border: 2px solid white;
+}
+
+.background_map {
+    background-image:
+      linear-gradient(180deg, rgba(7, 19, 31, 0.6) 29%, rgba(0, 65, 100, 0.6) 100%),
+      url('../../../public/transparent_russia.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+.background_map:hover {
+    background-position: 17vw;
 }
 
 .discoverers_container {
@@ -292,6 +312,19 @@
 @media(max-width: 500px) {
     :root {
         --home-preview-height: 60vh;
+    }
+    .antarctica {
+        padding-bottom: vh;
+    }
+    .home_navigation {
+        flex-direction: column;
+        gap:10px;
+        padding: 10px;
+        height: auto;
+    }
+    .block_navigation {
+        height: auto;
+        width: 80%;
     }
     .block_text {
         width: 90%;
