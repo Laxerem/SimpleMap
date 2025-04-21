@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Discover from "./discover"
+import Discoverer from "./discover"
 import { DiscoverParams } from "./discover"
 
 
@@ -62,16 +62,16 @@ const Discovers_container = () => {
     {isMobile ? (
       <>
       <div className="discoverers_mob">
-        <Discover discover={belling}/>
-        <Discover discover={lazar}/>
+        <Discoverer discover={belling}/>
+        <Discoverer discover={lazar}/>
       </div>
       <Discoverers_content />
       </>
     ) : (
     <>
-    <Discover discover={belling}/>
+    <Discoverer discover={belling}/>
     <Discoverers_content />
-    <Discover discover={lazar}/>
+    <Discoverer discover={lazar}/>
     </>
     )}
   </div>

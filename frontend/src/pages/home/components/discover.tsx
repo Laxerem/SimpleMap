@@ -10,7 +10,7 @@ interface IDiscover {
     discover: DiscoverParams
 }
 
-const Discover: React.FC<IDiscover> = ({discover}) => {
+const Discoverer: React.FC<IDiscover> = ({discover}) => {
     return (
     <div className='discover'>
         <div className={discover.image_class}>
@@ -29,4 +29,4 @@ const Discover: React.FC<IDiscover> = ({discover}) => {
 )
 }
 
-export default Discover
+export default Discoverer

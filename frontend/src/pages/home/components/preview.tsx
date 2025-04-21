@@ -11,7 +11,7 @@ type BlockNavigation = {
   classname: string;
 };
 
-const HomePresentation: React.FC<React.PropsWithChildren<{ info: PreviewInfo }>> = ({ info }) => {
+const HomePresentation: React.FC<{ info: PreviewInfo }> = ({ info }) => {
   const navigate = useNavigate();
 
   const blocks: BlockNavigation[] = [
