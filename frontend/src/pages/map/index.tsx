@@ -1,7 +1,5 @@
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
-import "leaflet/dist/leaflet.css"
-import "../../assets/styles/map.css"
-import MapComponent from './map'
+import MapComponent from './component/map'
 
 const MapPage = () => {
     return (
