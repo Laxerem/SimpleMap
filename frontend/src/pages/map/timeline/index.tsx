@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { useEffect } from "react";
 import Slider from '@mui/material/Slider';
 import { Box, SxProps, Theme, Typography } from '@mui/material';
 import './timeline.scss'
+import { useMapContext } from '../../../context/map/map_context';
 
 const marks = [
     {
@@ -30,6 +32,11 @@ const timeLineStyle: SxProps<Theme> = {
 
 const MapTimeLine = () => {
     const [value, setValue] = React.useState<number>(0);
+    const {stage, setStage} = useMapContext()
+
+    useEffect(() => {
+        setStage(value)
+    }, [value])
 
     const handleChange = (event: Event, newValue: number | number[]) => {
         setValue(newValue as number);
@@ -46,7 +53,7 @@ const MapTimeLine = () => {
                     <Typography id="input-slider" gutterBottom>
                         {value}
                     </Typography>
-                        <Slider
+                    <Slider
                         aria-labelledby="time_line"
                         value={value}
                         onChange={handleChange}

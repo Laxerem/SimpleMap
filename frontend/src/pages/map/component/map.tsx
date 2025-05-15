@@ -5,24 +5,28 @@ import Way_data from './geojson_data'; //Данные экспедиции в ф
 import MapTimeLine from '../timeline';
 import './map.scss';
 
+import { useMapContext } from '../../../context/map/map_context';
+import { useEffect } from 'react';
+
 const MapComponent: React.FC = () => {
+  const {stage} = useMapContext()
+
+  useEffect(() => {
+    console.log(stage)
+  }, [stage])
 
     return(
         <>
           <MapContainer 
-          center={[0,0]}
-          zoom={2}
+          center={[56,20]}
+          zoom={5}
           maxZoom={10}
-          minZoom={2}
+          minZoom={1.7}
           className='map'
           >
           <TileLayer
             url="https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
           />
-
-          <Marker position={[0,0]}>
-              <Popup>ЭЙ ЧЕБУРЕК</Popup>
-          </Marker>
 
           <GeoJSON data={Way_data}/>
           </MapContainer>
