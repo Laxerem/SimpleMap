@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Slider from '@mui/material/Slider';
 import { Box, SxProps, Theme, Typography } from '@mui/material';
 import './timeline.scss'
@@ -31,11 +30,12 @@ const timeLineStyle: SxProps<Theme> = {
 }
 
 const MapTimeLine = () => {
-    const [value, setValue] = React.useState<number>(0);
-    const {stage, setStage} = useMapContext()
+    const [value, setValue] = useState<number>(0);
+    const {setStage, setZoomContext} = useMapContext();
 
     useEffect(() => {
         setStage(value)
+        setZoomContext(value)
     }, [value])
 
     const handleChange = (event: Event, newValue: number | number[]) => {
