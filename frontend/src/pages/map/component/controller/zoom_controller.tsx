@@ -15,10 +15,10 @@ const ZoomController: React.FC<PropsWithChildren<Props>> = ({map}) => {
             setZoomContext(map.getZoom())
         }
         
-        map.on("zoom", handleZoom)
+        map.on("zoomend", handleZoom)
         
         return () => {
-            map.off("zoom", handleZoom)
+            map.off("zoomend", handleZoom)
         };
     }, []);
 

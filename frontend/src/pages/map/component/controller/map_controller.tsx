@@ -11,7 +11,7 @@ const MapController: React.FC = () => {
     const {viewContext, zoomContext} = useMapContext()
 
     useEffect(() => {
-        map.setView(viewContext)
+        map.flyTo(viewContext)
     }, [viewContext])
 
     useEffect(() => {
