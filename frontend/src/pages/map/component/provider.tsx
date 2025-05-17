@@ -9,7 +9,7 @@ const MapContextProvider: React.FC<PropsWithChildren> = ({children}) => {
 
     return (
         <MapContext.Provider
-        value={{stage, zoomContext, zoomCenterContext, setStage, setZoomContext, setZoomCenterContext}}
+        value={{stage, zoomContext, viewContext: zoomCenterContext, setStage, setZoomContext, setViewContext: setZoomCenterContext}}
         >
         {children}
         </MapContext.Provider>

@@ -11,7 +11,7 @@ import { useMapContext } from '../../../context/map/map_context';
 import { useEffect } from 'react';
 
 const MapComponent: React.FC = () => {
-  const {zoomContext, zoomCenterContext, stage} = useMapContext()
+  const {zoomContext, viewContext: zoomCenterContext, stage} = useMapContext()
 
   useEffect(() => {
     console.log(`Зум: ${zoomContext}`)

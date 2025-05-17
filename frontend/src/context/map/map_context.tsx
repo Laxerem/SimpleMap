@@ -1,26 +1,26 @@
 import React, { useContext } from "react";
-import { LatLngExpression } from "leaflet";
+import { LatLngExpression, ZoomPanOptions } from "leaflet";
 
 interface IMapContext {
     stage: number;
     zoomContext: number;
-    zoomCenterContext: LatLngExpression;
+    viewContext: LatLngExpression;
     setStage: (stage: number) => void;
     setZoomContext: (zoom: number) => void;
-    setZoomCenterContext: (center: LatLngExpression) => void
+    setViewContext: ( center: LatLngExpression, zoom?: number, options?: ZoomPanOptions) => void
 }
 
 export const MapContext = React.createContext<IMapContext>({
     stage: 0,
     zoomContext: 0,
-    zoomCenterContext: [0, 0],
+    viewContext: [0, 0],
     setStage: () => {
         throw new Error("Not implemented")
     },
     setZoomContext: () => {
         throw new Error("Not implemented")
     },
-    setZoomCenterContext: () => {
+    setViewContext: () => {
         throw new Error("Not implemented")
     }
 })

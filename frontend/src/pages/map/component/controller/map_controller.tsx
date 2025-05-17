@@ -8,11 +8,11 @@ import { useMapContext } from "../../../../context/map/map_context";
 
 const MapController: React.FC = () => {
     const map = useMap()
-    const {zoomCenterContext, zoomContext} = useMapContext()
+    const {viewContext, zoomContext} = useMapContext()
 
     useEffect(() => {
-        map.setView(zoomCenterContext)
-    }, [zoomCenterContext])
+        map.setView(viewContext)
+    }, [viewContext])
 
     useEffect(() => {
         map.setZoom(zoomContext)
