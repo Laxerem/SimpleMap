@@ -31,19 +31,16 @@ const timeLineStyle: SxProps<Theme> = {
 
 const MapTimeLine = () => {
     const [value, setValue] = useState<number>(0);
-    const {setStage, setZoomContext} = useMapContext();
+    const setStage = useMapContext().setStage;
+    const stage = useMapContext().stage
 
     useEffect(() => {
-        setStage(value)
-        setZoomContext(value)
+        if (value != stage)
+            setStage(value)
     }, [value])
 
     const handleChange = (event: Event, newValue: number | number[]) => {
         setValue(newValue as number);
-    }
-
-    function valuetext(value: number) {
-        return `${value}°C`;
     }
 
     return (
@@ -59,7 +56,6 @@ const MapTimeLine = () => {
                         onChange={handleChange}
                         min={0}
                         max={4}
-                        getAriaValueText={valuetext}
                         marks={marks}
                         sx={timeLineStyle}
                     />

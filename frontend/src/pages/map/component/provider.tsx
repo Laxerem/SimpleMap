@@ -1,13 +1,15 @@
 import React, { PropsWithChildren, useState } from "react";
 import { MapContext } from "../../../context/map/map_context";
+import { LatLngExpression } from "leaflet";
 
 const MapContextProvider: React.FC<PropsWithChildren> = ({children}) => {
     const [stage, setStage] = useState<number>(0)
     const [zoomContext, setZoomContext] = useState<number>(5)
+    const [zoomCenterContext, setZoomCenterContext] = useState<LatLngExpression>([56,20])
 
     return (
         <MapContext.Provider
-        value={{stage, zoomContext, setStage, setZoomContext}}
+        value={{stage, zoomContext, zoomCenterContext, setStage, setZoomContext, setZoomCenterContext}}
         >
         {children}
         </MapContext.Provider>
