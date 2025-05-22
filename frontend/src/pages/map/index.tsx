@@ -1,11 +1,13 @@
-import MapComponent from './component/map'
-import MapContextProvider from './component/provider'
+import MapComponent from './components/map'
+import MapContextProvider from '../../context/map/provider'
 
 const MapPage = () => {
     return (
-        <MapContextProvider>
-            <MapComponent />
-        </MapContextProvider>
+        <div className='map_container'>
+            <MapContextProvider>
+                <MapComponent />
+            </MapContextProvider>
+        </div>
     )
 }
 

@@ -1,4 +1,4 @@
-import "./index.scss"
+import "./styles/index.scss"
 import Home_presentation, { PreviewInfo } from "./components/preview"
 import Discovers_container from "./components/discovers_container"
 import Antarctica_facts from "./components/facts"

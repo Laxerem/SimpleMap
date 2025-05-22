@@ -1,36 +1,14 @@
+import '../../styles/timeline.scss'
+import { TimeLineSettings } from '../../settings/TimeLineSettings';
+
 import { useEffect, useState } from "react";
 import Slider from '@mui/material/Slider';
-import { Box, SxProps, Theme, Typography } from '@mui/material';
-import './timeline.scss'
-import { useMapContext } from '../../../context/map/map_context';
-
-const marks = [
-    {
-        value: 0,
-        label: 'Начало',
-    },
-    {
-        value: 1,
-        label: 'Сложности',
-    },
-    {
-        value: 2,
-        label: 'Продолжение',
-    },
-    {
-        value: 3,
-        label: 'Финал',
-    },
-];
-
-const timeLineStyle: SxProps<Theme> = {
-    '.MuiSlider-markLabel': {
-        color: 'white'
-    }
-}
+import { Box, Typography } from '@mui/material';
+import { useMapContext } from '../../../../context/map/map_context';
 
 const MapTimeLine = () => {
     const [value, setValue] = useState<number>(0);
+    
     const setStage = useMapContext().setStage;
     const stage = useMapContext().stage
 
@@ -51,13 +29,9 @@ const MapTimeLine = () => {
                         {value}
                     </Typography>
                     <Slider
-                        aria-labelledby="time_line"
+                        {...TimeLineSettings.props}
                         value={value}
                         onChange={handleChange}
-                        min={0}
-                        max={4}
-                        marks={marks}
-                        sx={timeLineStyle}
                     />
                 </Box>
             </div>

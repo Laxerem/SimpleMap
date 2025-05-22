@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LatLngExpression, ZoomPanOptions } from "leaflet";
+import { LatLngExpression } from "leaflet";
 
 interface IMapContext {
     stage: number;
@@ -7,7 +7,7 @@ interface IMapContext {
     viewContext: LatLngExpression;
     setStage: (stage: number) => void;
     setZoomContext: (zoom: number) => void;
-    setViewContext: ( center: LatLngExpression, zoom?: number, options?: ZoomPanOptions) => void
+    setViewContext: (center: LatLngExpression) => void
 }
 
 export const MapContext = React.createContext<IMapContext>({

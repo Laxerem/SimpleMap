@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useState } from "react";
-import { MapContext } from "../../../context/map/map_context";
+import { MapContext } from "./map_context";
 import { LatLngExpression } from "leaflet";
 
 const MapContextProvider: React.FC<PropsWithChildren> = ({children}) => {

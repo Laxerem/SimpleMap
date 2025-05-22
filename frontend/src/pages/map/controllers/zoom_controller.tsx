@@ -1,4 +1,4 @@
-import { useMapContext } from "../../../../context/map/map_context";
+import { useMapContext } from "../../../context/map/map_context";
 import React, { PropsWithChildren, useEffect } from "react";
 import { Map } from "leaflet";
 
