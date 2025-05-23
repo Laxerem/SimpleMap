@@ -1,6 +1,5 @@
 import { MapContainerProps } from "react-leaflet";
 import { IMapSettings } from "./interface/IMapSettings";
-import WaySettings from "./WaySettings";
 
 const MapProps: MapContainerProps = {
     maxZoom: 10,
@@ -11,8 +10,8 @@ const MapProps: MapContainerProps = {
 
 const MapSettings: IMapSettings = {
     listen_events: true,
-    props: MapProps,
-    way_data: WaySettings.data
+    way_display: true,
+    props: MapProps
 }
 
 export default MapSettings

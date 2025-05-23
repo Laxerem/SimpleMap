@@ -1,32 +1,31 @@
-import { Stage, WayMapData, WayPoint } from "../settings/interface/IWaySettings"
+import L, { LatLngExpression } from "leaflet"
+import { Stage } from "../settings/interface/IWaySettings"
+import WayCounter from "../WayCounter"
 
-const way_points: WayPoint[] = [
-    {coordinates: [57, 21]},
-    {coordinates: [37, -8]},
-    {coordinates: [-5, -35]},
-    {coordinates: [-69, 0]},
-    {coordinates: [9, 77]}
+const way_points: LatLngExpression[] = [
+    [57, 21],
+    [37, -8],
+    [-5, -35],
+    [-69, 0],
+    [9, 77]
 ]
 
 const stages: Stage[] = [
     {
-        name: "Этап 1",
-        description: "Начало",
+        name: "Начало",
         point_index: 0
     },
     {
-        name: "Этап 2",
-        description: "Продолжение",
+        name: "Продолжение",
         point_index: 2
     },
     {
-        name: "Этап 3",
-        description: "Финал",
+        name: "Финал",
         point_index: 4
     }
 ]
 
-export const way_data: WayMapData = {
-    points: way_points,
-    stages: stages
-}
+const points = way_points.map(point => L.latLng(point))
+const WayData = new WayCounter(points, stages)
+
+export default WayData

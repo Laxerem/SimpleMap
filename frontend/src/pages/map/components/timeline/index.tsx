@@ -30,6 +30,7 @@ const MapTimeLine = () => {
                     </Typography>
                     <Slider
                         {...TimeLineSettings.props}
+                        marks={TimeLineSettings.marks}
                         value={value}
                         onChange={handleChange}
                     />

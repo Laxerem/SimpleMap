@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css"
 import '../../styles/map.scss';
 
 import MapSettings from '../../settings/MapSettings';
+
 import MapContextListner from '../../../../context/map/context_listner';
 import { useMapContext } from '../../../../context/map/map_context';
 import MapController from '../../controllers/map_controller';
@@ -29,7 +30,8 @@ const MapComponent: React.FC = () => {
               zIndex={0}
             />
 
-            <WayMap />
+            {MapSettings.way_display ? <WayMap /> : null}
+            
             <MapController />
 
           </MapContainer>

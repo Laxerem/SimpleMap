@@ -1,23 +1,32 @@
 import { Icon, LatLngExpression } from "leaflet";
-
-interface WayPoint {
-    coordinates: LatLngExpression
-}
+import WayCounter from "../../WayCounter";
 
 interface Stage {
     name: string,
-    description: string,
     point_index: number
 }
 
-interface WayMapData {
-    points: WayPoint[]
-    stages: Stage[]
+interface WayPoint {
+    coordinates: LatLngExpression,
+    distance: number
+}
+
+interface WayStage {
+    name: string,
+    distance: number,
+    point_index: number
+}
+
+interface WayStages {
+    [key:number]: WayStage
+}
+interface WayPoints {
+    [key:number]: WayPoint
 }
 
 interface IWaySettings {
-    data: WayMapData
+    data: WayCounter,
     custom_point_icon?: Icon
 }
 
-export type { WayPoint, Stage, WayMapData, IWaySettings }
+export type { Stage, WayStages, WayPoints, WayPoint, WayStage, IWaySettings }
