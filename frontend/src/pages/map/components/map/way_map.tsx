@@ -1,9 +1,11 @@
 import React from "react"
 import { Marker, Polyline } from "react-leaflet"
 import WayObject from "../../settings/WayObject"
+import { useWayContext } from "../../../../context/way/way_context"
 
 const WayMap: React.FC = () => {
     const polylines_coords = WayObject.data.get_points_coords()
+    const setStage = useWayContext().setStage
 
     return (
         <>
@@ -21,8 +23,13 @@ const WayMap: React.FC = () => {
             {
             WayObject.data.get_stages().map((stage, index) => (
 
-                <Marker key={index} position={polylines_coords[stage.point_index]} icon={WayObject.custom_point_icon || undefined}>
-
+                <Marker 
+                key={index} position={polylines_coords[stage.point_index]} 
+                icon={WayObject.custom_point_icon || undefined}
+                eventHandlers={{
+                    click: () => setStage(stage)
+                }}
+                >
                 </Marker>
             ))
             }

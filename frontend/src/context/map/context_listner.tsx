@@ -3,7 +3,7 @@ import { useMapContext } from "./map_context";
 
 
 const MapContextListner: React.FC = () => {
-    const {zoomContext, viewContext, stage} = useMapContext()
+    const {zoomContext, viewContext } = useMapContext()
 
     useEffect(() => {
         console.log(`Зум: ${zoomContext}`)
@@ -12,10 +12,6 @@ const MapContextListner: React.FC = () => {
     useEffect(() => {
         console.log(`Позиция: ${viewContext}`)
     }, [viewContext])
-
-    useEffect(() => {
-        console.log(`Стадия: ${stage.name}`)
-    }, [stage])
 
     return null
 }
