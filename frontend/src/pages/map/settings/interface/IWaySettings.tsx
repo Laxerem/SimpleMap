@@ -17,16 +17,9 @@ interface WayStage {
     point_index: number
 }
 
-interface WayStages {
-    [key:number]: WayStage
-}
-interface WayPoints {
-    [key:number]: WayPoint
-}
-
 interface IWaySettings {
     data: WayCounter,
     custom_point_icon?: Icon
 }
 
-export type { Stage, WayStages, WayPoints, WayPoint, WayStage, IWaySettings }
+export type { Stage, WayPoint, WayStage, IWaySettings }

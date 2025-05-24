@@ -1,17 +1,22 @@
 import React, { useContext } from "react";
 import { LatLngExpression } from "leaflet";
+import { WayStage } from "../../pages/map/settings/interface/IWaySettings";
 
 interface IMapContext {
-    stage: number;
+    stage: WayStage;
     zoomContext: number;
     viewContext: LatLngExpression;
-    setStage: (stage: number) => void;
+    setStage: (stage: WayStage) => void;
     setZoomContext: (zoom: number) => void;
     setViewContext: (center: LatLngExpression) => void
 }
 
 export const MapContext = React.createContext<IMapContext>({
-    stage: 0,
+    stage: {
+        name:"",
+        distance: 0,
+        point_index: NaN
+    },
     zoomContext: 0,
     viewContext: [0, 0],
     setStage: () => {

@@ -10,11 +10,9 @@ const timeLineStyle: SxProps<Theme> = {
 const timeLineProps: SliderProps = {
     "aria-label": "Temperature",
     min: 0,
-    max: 100,
     sx: timeLineStyle,
 }
 
 export const TimeLineSettings: ITimeLineSettings = {
-    props: timeLineProps,
-    marks: []
+    props: timeLineProps
 }

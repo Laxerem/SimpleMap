@@ -4,6 +4,8 @@ import "leaflet/dist/leaflet.css"
 import '../../styles/map.scss';
 
 import MapSettings from '../../settings/MapSettings';
+import { TimeLineSettings } from '../../settings/TimeLineSettings';
+import WayObject from '../../settings/WayObject';
 
 import MapContextListner from '../../../../context/map/context_listner';
 import { useMapContext } from '../../../../context/map/map_context';
@@ -35,7 +37,7 @@ const MapComponent: React.FC = () => {
             <MapController />
 
           </MapContainer>
-          <MapTimeLine />
+          <MapTimeLine way_obj={WayObject.data} max={100}/>
         </>
     )
 }

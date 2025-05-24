@@ -14,7 +14,7 @@ const MapContextListner: React.FC = () => {
     }, [viewContext])
 
     useEffect(() => {
-        console.log(`Стадия: ${stage}`)
+        console.log(`Стадия: ${stage.name}`)
     }, [stage])
 
     return null
