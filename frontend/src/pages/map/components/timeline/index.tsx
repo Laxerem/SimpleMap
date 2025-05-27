@@ -16,35 +16,28 @@ interface TimeLineProps {
     max: number
 }
 
-const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({way_obj, max}) => {
-    const [value, setValue] = useState<number>(0);
-    const [distance, setDistance] = useState<number>(0);
+interface TimeLineStages {
+    [key: string]: {
+        distance: number
+        value: number
+    }
+}
 
-    const setStage = useWayContext().setStage;
-    const stage = useWayContext().stage
+const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({way_obj, max}) => {
+    const {value, setValue, stage, setDistance} = useWayContext()
 
     const one_step = way_obj.total_distance() / max
 
     const marks: Mark[] = way_obj.get_stages().map(stage => ({
         label: stage.name,
-        value: 100 / (way_obj.total_distance() / stage.distance)
+        value: max / (way_obj.total_distance() / stage.distance)
     }))
-
-    useEffect(() => {
-        const stage_value = 100 / (way_obj.total_distance() / stage.distance)
-        setValue(stage_value)
-    }, [stage])
-
-    useEffect(() => {
-        const stage = way_obj.get_stage_by_distance(distance) as WayStage
-        setStage(stage)
-    }, [distance])
 
     const handleChange = (event: Event, newValue: number | number[]) => {
         const new_value = newValue as number
-
+        
         setDistance(one_step * new_value)
-        setValue(new_value);
+        setValue(new_value)
     }
 
     return (

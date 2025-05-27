@@ -3,12 +3,13 @@ import { WayContext } from "./way_context";
 import { WayStage } from "../../pages/map/settings/interface/IWaySettings";
 
 const WayContextProvider: React.FC<PropsWithChildren> = ({children}) => {
-    const [stage, setStage] = useState<WayStage>({name: "", distance: 0, point_index: NaN})
+    const [value, setValue] = useState<number>(0)
+    const [stage, setStage] = useState<WayStage>({name: "Начало", distance: 0, point_index: 0})
     const [distance, setDistance] = useState<number>(0)
 
     return(
         <WayContext.Provider
-            value={{stage, distance, setStage, setDistance}}
+            value={{value, stage, distance, setValue, setStage, setDistance}}
         >
         {children}
         </WayContext.Provider>
