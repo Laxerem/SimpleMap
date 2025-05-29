@@ -2,10 +2,11 @@ import { MapContainerProps } from "react-leaflet";
 import { IMapSettings } from "./interface/IMapSettings";
 
 const MapProps: MapContainerProps = {
-    maxZoom: 10,
-    minZoom: 1,
-    maxBounds: [[-90, -180], [90, 180]],
-    maxBoundsViscosity: 0.5
+    maxZoom: 8,
+    minZoom: 2,
+    maxBounds: [[-90, -95], // Мин. широта, долгота острова Петра I
+    [90, -95 + 360]], // Макс. широта, долгота копии],
+    maxBoundsViscosity: 1
 }
 
 const MapSettings: IMapSettings = {

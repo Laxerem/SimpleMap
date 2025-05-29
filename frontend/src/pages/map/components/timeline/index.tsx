@@ -8,8 +8,7 @@ import { Mark } from '@mui/material/Slider/useSlider.types';
 import { TimeLineSettings } from '../../settings/TimeLineSettings';
 import { useWayContext } from '../../../../context/way/way_context';
 
-import WayCounter from '../../WayCounter';
-import { WayStage } from '../../settings/interface/IWaySettings';
+import WayCounter from '../way/WayCounter';
 
 interface TimeLineProps {
     way_obj: WayCounter,

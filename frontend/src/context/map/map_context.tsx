@@ -10,7 +10,7 @@ interface IMapContext {
 
 export const MapContext = React.createContext<IMapContext>({
     zoomContext: 0,
-    viewContext: [0, 0],
+    viewContext: [-200, 0],
     setZoomContext: () => {
         throw new Error("Not implemented")
     },
