@@ -44,10 +44,10 @@ class WayCounter {
                 if (i < line.coordinates.length - 1) {
                     let seg_distance = convert_distance(point.distanceTo(line_coordinates[i + 1]))
                     segment_distance += seg_distance
+                    this.distance += seg_distance
                 }
 
                 point_index += 1
-                this.distance += segment_distance
             })
             this.way_segments.push({
                 way_points: line_points,
