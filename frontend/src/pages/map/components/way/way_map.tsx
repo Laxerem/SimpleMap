@@ -24,6 +24,7 @@ const WayMap: React.FC = () => {
     const handle_click = (new_stage: WayStage) => {
         const new_value = 100 / (WayObject.total_distance() / new_stage.distance)
 
+        setDistance(new_stage.distance)
         setStage(new_stage)
         setValue(new_value)
     }
@@ -34,8 +35,6 @@ const WayMap: React.FC = () => {
             .map(([key, point]) => point.coordinates)
         return filtered_points.length > 1 ? filtered_points : [];
     }).filter(segment => segment.length > 0);
-
-    console.log(filtered_segments)
 
     return (
         <>
