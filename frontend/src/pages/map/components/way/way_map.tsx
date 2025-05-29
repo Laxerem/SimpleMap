@@ -28,13 +28,22 @@ const WayMap: React.FC = () => {
         setValue(new_value)
     }
 
+    const filtered_segments = way_segments.map(segment => {
+        const filtered_points = Object.entries(segment.way_points)
+            .filter(([key, point]) => point.distance <= distance)
+            .map(([key, point]) => point.coordinates)
+        return filtered_points.length > 1 ? filtered_points : [];
+    }).filter(segment => segment.length > 0);
+
+    console.log(filtered_segments)
+
     return (
         <>
             {
-                way_segments.map((segment, index) => (
+                filtered_segments.map((points, index) => (
                     <Polyline
                         key={index} 
-                        positions={Object.entries(segment.way_points).map(([key, point]) => point.coordinates)}
+                        positions={points}
                         weight={2}
                         pathOptions={{
                             color: 'red', // Цвет линии
