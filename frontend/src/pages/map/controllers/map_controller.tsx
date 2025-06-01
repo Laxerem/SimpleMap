@@ -2,6 +2,9 @@ import React, { useEffect } from "react"
 import { useMap } from "react-leaflet";
 
 import ZoomController from "./zoom_controller"
+import AreaController from "./area_controller";
+
+import { areaPolygons } from "../components/way/data/area_polygons";
 
 import { useMapContext } from "../../../context/map/map_context";
 
@@ -21,6 +24,7 @@ const MapController: React.FC = () => {
     return (
         <>
         <ZoomController map={map}/>
+        <AreaController polygons_area={areaPolygons} />
         </>
     )
 }

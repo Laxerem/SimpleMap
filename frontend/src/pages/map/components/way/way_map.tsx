@@ -31,8 +31,8 @@ const WayMap: React.FC = () => {
 
     const filtered_segments = way_segments.map(segment => {
         const filtered_points = Object.entries(segment.way_points)
-            .filter(([key, point]) => point.distance <= distance)
-            .map(([key, point]) => point.coordinates)
+            .filter(([, point]) => point.distance <= distance)
+            .map(([, point]) => point.coordinates)
         return filtered_points.length > 1 ? filtered_points : [];
     }).filter(segment => segment.length > 0);
 

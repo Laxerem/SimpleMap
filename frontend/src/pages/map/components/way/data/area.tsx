@@ -1,1 +1,0 @@
-const area: GeoJSON.FeatureCollection
