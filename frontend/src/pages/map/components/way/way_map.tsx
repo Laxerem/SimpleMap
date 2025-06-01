@@ -57,7 +57,7 @@ const WayMap: React.FC = () => {
             way_stages.map((obj_stage, index) => (
 
                 <Marker 
-                key={index} position={WayObject.get_point(obj_stage.point_index)?.coordinates as LatLngExpression} 
+                key={index} position={WayObject.get_point(obj_stage.stage.point_index)?.coordinates as LatLngExpression} 
                 icon={CustomPointIcon}
                 eventHandlers={{
                     click: () => handle_click(obj_stage)

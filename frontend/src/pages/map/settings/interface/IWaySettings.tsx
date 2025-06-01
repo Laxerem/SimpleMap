@@ -6,6 +6,10 @@ interface Stage {
     point_index: number
 }
 
+interface Stages {
+    [key:number]: Stage
+}
+
 interface AreaData {
     view_coords: LatLngExpression,
     geo_json: GeoJSON.Polygon
@@ -18,7 +22,7 @@ interface Area {
 interface StageArea {
     [key:string]: {
         dynamic_area: Area,
-        point_index: number
+        stage_id: number
     }
 }
 
@@ -28,10 +32,8 @@ interface WayPoint {
 }
 
 interface WayStage {
-    name: string,
-    date: string,
     distance: number,
-    point_index: number
+    stage: Stage
 }
 
-export type { Stage, StageArea, Area, AreaData, WayPoint, WayStage }
+export type { Stages, StageArea, Area, AreaData, WayPoint, WayStage }

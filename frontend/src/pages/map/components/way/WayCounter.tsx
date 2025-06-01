@@ -1,5 +1,5 @@
-import L, { LatLngExpression } from "leaflet"
-import { WayStage, WayPoint, Stage } from "../../settings/interface/IWaySettings"
+import L from "leaflet"
+import { WayStage, WayPoint, Stages } from "../../settings/interface/IWaySettings"
 
 function convert_distance(distance: number) {
     return Math.trunc(distance / 1000)
@@ -18,7 +18,7 @@ class WayCounter {
     private distance: number
     private way_points: {[key:number]: WayPoint}
 
-    constructor(lines_geojson: GeoJSON.LineString[], stages: Stage[]) {
+    constructor(lines_geojson: GeoJSON.LineString[], stages: Stages) {
         this.way_stages = []
         this.way_segments = []
         this.distance = 0
@@ -55,14 +55,12 @@ class WayCounter {
             })
         })
 
-        stages.forEach(stage => {
+        Object.entries(stages).forEach(([, stage]) => {
             const point = this.way_points[stage.point_index]
 
             this.way_stages.push({
-                name: stage.name,
-                date: stage.date,
+                stage: stage,
                 distance: point.distance,
-                point_index: stage.point_index
             })
         })
 

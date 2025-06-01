@@ -17,14 +17,14 @@ const convertGeoJsonToLatLng = (geoJson: GeoJSON.Polygon): LatLngExpression[][] 
 
 const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polygons_area}) => {
     const {zoomContext} = useMapContext()
-    const {setDistance} = useWayContext()
-    const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; data: AreaData }[]>([]);
+    const {setStage, setDistance, setValue} = useWayContext()
+    const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; stage_id: number; data: AreaData }[]>([]);
     
     useEffect(() => {
         const newPolygons = Object.entries(polygons_area)
 
         .filter(([, stage]) => stage.dynamic_area[zoomContext] !== undefined)
-        .map(([key, stage]) => ({ key, data: stage.dynamic_area[zoomContext] }));
+        .map(([key, stage]) => ({ key, stage_id: stage.stage_id, data: stage.dynamic_area[zoomContext] }));
     
         if (newPolygons.length > 0) {
           setRequiredPolygons(newPolygons);
@@ -32,20 +32,19 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
 
       }, [polygons_area, zoomContext]);
     
-    const handle_click = () => {
-        setDistance
+    const handle_click = (stage_id: number) => {
+        
     }
-    
 
     return (
         <>
             {
-                requiredPolygons.map(({key, data}) => (
+                requiredPolygons.map(({key, stage_id, data}) => (
                     <Polygon 
                     key={key} 
                     positions={convertGeoJsonToLatLng(data.geo_json)}
                     eventHandlers={{
-                        click: () => handle_click
+                        click: () => handle_click(stage_id)
                     }}
                     >
                         <Tooltip sticky direction="top">{key}</Tooltip>

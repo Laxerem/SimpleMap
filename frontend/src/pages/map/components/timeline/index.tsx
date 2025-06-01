@@ -1,6 +1,6 @@
 import '../../styles/timeline.scss'
 
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren } from "react";
 import Slider from '@mui/material/Slider';
 import { Box, Typography } from '@mui/material';
 import { Mark } from '@mui/material/Slider/useSlider.types';
@@ -15,21 +15,14 @@ interface TimeLineProps {
     max: number
 }
 
-interface TimeLineStages {
-    [key: string]: {
-        distance: number
-        value: number
-    }
-}
-
 const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({way_obj, max}) => {
     const {value, setValue, stage, setDistance} = useWayContext()
 
     const one_step = way_obj.total_distance() / max
 
-    const marks: Mark[] = way_obj.get_stages().map(stage => ({
-        label: stage.date,
-        value: max / (way_obj.total_distance() / stage.distance)
+    const marks: Mark[] = way_obj.get_stages().map(way_stage => ({
+        label: way_stage.stage.date,
+        value: max / (way_obj.total_distance() / way_stage.distance)
     }))
 
     const handleChange = (event: Event, newValue: number | number[]) => {
@@ -44,7 +37,7 @@ const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({way_obj, max})
             <div className='TimeLine'>
                 <Box>
                     <Typography id="input-slider" gutterBottom>
-                        {stage.name}
+                        {stage.stage.name}
                     </Typography>
                     <Slider
                         {...TimeLineSettings.props}

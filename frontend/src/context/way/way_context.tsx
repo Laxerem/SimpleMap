@@ -13,9 +13,12 @@ interface IWayContext {
 export const WayContext = React.createContext<IWayContext>({
     value: 0,
     stage: {
-        name: "",
         distance: 0,
-        point_index: NaN,
+        stage: {
+            name: "",
+            date: "",
+            point_index: NaN
+        }
     },
     distance: 0,
     setValue: () => {

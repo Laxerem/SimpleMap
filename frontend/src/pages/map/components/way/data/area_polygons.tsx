@@ -844,7 +844,7 @@ export const areaPolygons: StageArea = {
                     }
                 },
             },
-            point_index: 100
+            stage_id: 0
         },
         "Англия": {
             dynamic_area: {
@@ -2069,6 +2069,6 @@ export const areaPolygons: StageArea = {
                     }
                 },
             },
-            point_index: 150
+            stage_id: 1
         }
 }
