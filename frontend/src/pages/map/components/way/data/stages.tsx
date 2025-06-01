@@ -2,15 +2,18 @@ import { Stage } from "../../../settings/interface/IWaySettings"
 
 export const stages: Stage[] = [
     {
-        name: "Начало",
-        point_index: 70
+        name: "Отправление из Кронштадта",
+        date: "",
+        point_index: 0
     },
     {
-        name: "Продолжение",
+        name: "Прибытие в Кронштадт",
+        date: "",
+        point_index: 100
+    },
+    {
+        name: "Прибытие в Кронштадт",
+        date: "",
         point_index: 110
     },
-    {
-        name: "Финал",
-        point_index: 225
-    }
 ]

@@ -60,6 +60,7 @@ class WayCounter {
 
             this.way_stages.push({
                 name: stage.name,
+                date: stage.date,
                 distance: point.distance,
                 point_index: stage.point_index
             })

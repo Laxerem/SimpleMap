@@ -28,7 +28,7 @@ const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({way_obj, max})
     const one_step = way_obj.total_distance() / max
 
     const marks: Mark[] = way_obj.get_stages().map(stage => ({
-        label: stage.name,
+        label: stage.date,
         value: max / (way_obj.total_distance() / stage.distance)
     }))
 

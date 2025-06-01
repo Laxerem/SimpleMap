@@ -45,8 +45,8 @@ const WayMap: React.FC = () => {
                         positions={points}
                         weight={2}
                         pathOptions={{
-                            color: 'red', // Цвет линии
-                            weight: 2,       // Толщина (в пикселях)
+                            color: 'yellowgreen', // Цвет линии
+                            weight: 2.5,       // Толщина (в пикселях)
                             opacity: 0.7,    // Прозрачность (0-1)
                             lineCap: 'round', // Скругление краёв
                         }}
