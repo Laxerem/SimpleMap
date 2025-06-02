@@ -1,4 +1,4 @@
-import MapComponent from './components/map'
+import MapComponent from './MapComponent'
 import MapContextProvider from '../../context/map/provider'
 
 const MapPage = () => {

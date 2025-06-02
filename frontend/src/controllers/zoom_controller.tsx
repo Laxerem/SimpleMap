@@ -1,12 +1,12 @@
-import { useMapContext } from "../../../context/map/map_context";
+import { useMapContext } from "../context/map/map_context";
 import React, { PropsWithChildren, useEffect } from "react";
 import { Map } from "leaflet";
 
-type Props = {
+type ZoomControllerProps = {
     map: Map
 }
 
-const ZoomController: React.FC<PropsWithChildren<Props>> = ({map}) => {
+const ZoomController: React.FC<PropsWithChildren<ZoomControllerProps>> = ({map}) => {
     const setZoomContext = useMapContext().setZoomContext;
 
     useEffect(() => {

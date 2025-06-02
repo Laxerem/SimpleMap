@@ -1,4 +1,4 @@
-import { Stages } from "../../../settings/interface/IWaySettings"
+import { Stages } from "../pages/map/settings/interface/IWaySettings"
 
 export const stages: Stages = {
     0: {
@@ -7,11 +7,16 @@ export const stages: Stages = {
         point_index: 0
     },
     1: {
-        name: "Кронштат",
+        name: "Копенганен",
         date: "1869",
         point_index: 100
     },
     2: {
+        name: "Англия",
+        date: "1869",
+        point_index: 200
+    },
+    3: {
         name: "Финал",
         date: "2000",
         point_index: 700

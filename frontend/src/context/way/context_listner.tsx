@@ -3,11 +3,11 @@ import { useWayContext } from "./way_context";
 
 
 const WayContextListner: React.FC = () => {
-    const {stage, distance} = useWayContext()
+    const {stageId, distance} = useWayContext()
 
     useEffect(() => {
-        console.log(`Стадия: ${stage.name}`)
-    }, [stage])
+        console.log(`ID Стадии: ${stageId}`)
+    }, [stageId])
 
     useEffect(() => {
         console.log(`Дистанция: ${distance}`)

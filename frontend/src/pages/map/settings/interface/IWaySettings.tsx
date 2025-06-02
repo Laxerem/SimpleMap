@@ -31,9 +31,23 @@ interface WayPoint {
     distance: number
 }
 
+interface WayPoints {
+    [point_id:number]: {
+        coordinates: L.LatLng,
+        distance: number
+    }
+}
 interface WayStage {
-    distance: number,
-    stage: Stage
+    stage: Stage,
+    distance: number
+}
+interface WayStages {
+    [stage_id:number]: WayStage
 }
 
-export type { Stages, StageArea, Area, AreaData, WayPoint, WayStage }
+interface WaySegment {
+    way_points: WayPoints
+    total_distance: number
+}
+
+export type { Stages, StageArea, Area, AreaData, WayPoint, WayStage, WayPoints, WayStages, WaySegment }

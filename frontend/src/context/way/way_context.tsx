@@ -1,30 +1,16 @@
 import React, { useContext } from "react";
-import { WayStage } from "../../pages/map/settings/interface/IWaySettings";
 
 interface IWayContext {
-    value: number;
-    stage: WayStage;
+    stageId: number;
     distance: number;
-    setValue: (value: number) => void;
-    setStage: (stage: WayStage) => void;
+    setStageId: (stage: number) => void;
     setDistance: (distance: number) => void;
 }
 
 export const WayContext = React.createContext<IWayContext>({
-    value: 0,
-    stage: {
-        distance: 0,
-        stage: {
-            name: "",
-            date: "",
-            point_index: NaN
-        }
-    },
+    stageId: 0,
     distance: 0,
-    setValue: () => {
-        throw new Error("Not implemented")
-    },
-    setStage: () => {
+    setStageId: () => {
         throw new Error("Not implemented")
     },
     setDistance: () => {
