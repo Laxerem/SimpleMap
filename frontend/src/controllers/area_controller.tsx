@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useEffect, useState } from "react"
 import { useMapContext } from "../context/map/map_context"
 import { AreaData, StageArea } from "../pages/map/settings/interface/IWaySettings"
 import { Polygon, Tooltip } from "react-leaflet"
-import { LatLngExpression } from "leaflet"
+import { LatLngExpression, PolylineOptions } from "leaflet"
 import { useWayContext } from "../context/way/way_context"
 
 interface AreaControllerProps {
@@ -13,18 +13,22 @@ const convertGeoJsonToLatLng = (geoJson: GeoJSON.Polygon): LatLngExpression[][] 
     return geoJson.coordinates.map((polygon) =>
       polygon.map(([lng, lat]) => ({ lat, lng }))
     );
-  };
+};
+
+const DefaultAreaStyle: PolylineOptions = {
+    weight: 0.5
+}
 
 const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polygons_area}) => {
-    const {zoomContext} = useMapContext()
+    const {zoomContext, setViewContext} = useMapContext()
     const {setStageId} = useWayContext()
-    const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; stage_id: number; data: AreaData }[]>([]);
+    const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; style?: PolylineOptions; stage_id: number; data: AreaData }[]>([]);
     
     useEffect(() => {
         const newPolygons = Object.entries(polygons_area)
 
         .filter(([, stage]) => stage.dynamic_area[zoomContext] !== undefined)
-        .map(([key, stage]) => ({ key, stage_id: stage.stage_id, data: stage.dynamic_area[zoomContext] }));
+        .map(([key, stage]) => ({ key, stage_id: stage.stage_id, style: stage.style, data: stage.dynamic_area[zoomContext] }));
     
         if (newPolygons.length > 0) {
           setRequiredPolygons(newPolygons);
@@ -32,20 +36,24 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
 
       }, [polygons_area, zoomContext]);
     
-    const handle_click = (stage_id: number) => {
+    const handle_click = (stage_id: number, view_coords: any) => {
+        const coords: LatLngExpression = [view_coords[1], view_coords[0]]
+
         setStageId(stage_id)
+        setViewContext(coords)
     }
 
     return (
         <>
             {
-                requiredPolygons.map(({key, stage_id, data}) => (
+                requiredPolygons.map(({key, stage_id, data, style}) => (
                     <Polygon 
                     key={key} 
                     positions={convertGeoJsonToLatLng(data.geo_json)}
                     eventHandlers={{
-                        click: () => handle_click(stage_id)
+                        click: () => handle_click(stage_id, data.view_coords)
                     }}
+                    {...(style || DefaultAreaStyle)}
                     >
                         <Tooltip sticky direction="top">{key}</Tooltip>
                     </Polygon>

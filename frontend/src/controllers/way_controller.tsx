@@ -1,8 +1,8 @@
 import React, { PropsWithChildren } from "react"
 import { useWayContext } from "../context/way/way_context"
 import { WaySegment } from "../pages/map/settings/interface/IWaySettings"
-import { Marker, Polyline } from "react-leaflet"
-import { Icon, LatLngExpression } from "leaflet"
+import { Polyline } from "react-leaflet"
+import { Icon } from "leaflet"
 
 interface WayControllerProps {
     way: WaySegment[],

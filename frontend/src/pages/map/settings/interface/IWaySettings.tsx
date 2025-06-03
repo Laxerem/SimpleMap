@@ -1,4 +1,4 @@
-import { LatLngExpression } from "leaflet"
+import { LatLngExpression, PolylineOptions } from "leaflet"
 
 interface Stage {
     name: string,
@@ -23,6 +23,7 @@ interface StageArea {
     [key:string]: {
         dynamic_area: Area,
         stage_id: number
+        style?: PolylineOptions
     }
 }
 

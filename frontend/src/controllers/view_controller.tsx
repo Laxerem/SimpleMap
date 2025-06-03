@@ -11,7 +11,7 @@ const ViewController: React.FC<PropsWithChildren<ViewControllerProps>> = ({map})
     const {viewContext, zoomContext} = useMapContext()
 
     useEffect(() => {
-        map.flyTo(viewContext, 6, {animate: true, duration: 1, easeLinearity: 0.5})
+        map.flyTo(viewContext, 8, {animate: true, duration: 2, easeLinearity: 1})
     }, [viewContext])
 
     useEffect(() => {
