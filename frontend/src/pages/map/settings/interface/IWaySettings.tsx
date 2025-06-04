@@ -10,6 +10,14 @@ interface Stages {
     [key:number]: Stage
 }
 
+interface StageData {
+    status: string
+}
+
+interface StagesData {
+    [key:number]: StageData
+}
+
 interface AreaData {
     view_coords: LatLngExpression,
     geo_json: GeoJSON.Polygon
@@ -51,4 +59,4 @@ interface WaySegment {
     total_distance: number
 }
 
-export type { Stage, Stages, StageArea, Area, AreaData, WayPoint, WayStage, WayPoints, WayStages, WaySegment }
+export type { Stage, Stages, StageData, StagesData, StageArea, Area, AreaData, WayPoint, WayStage, WayPoints, WayStages, WaySegment }

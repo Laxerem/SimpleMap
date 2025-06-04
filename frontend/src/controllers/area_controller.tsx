@@ -17,7 +17,7 @@ const convertGeoJsonToLatLng = (geoJson: GeoJSON.Polygon): LatLngExpression[][] 
 };
 
 const DefaultAreaStyle: PolylineOptions = {
-    weight: 0.5
+    weight: 1
 }
 
 const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polygons_area}) => {

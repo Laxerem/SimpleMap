@@ -17,8 +17,8 @@ export const stages: Stages = {
         point_index: 200
     },
     3: {
-        name: "Финал",
+        name: "Лиссабон",
         date: "2000",
-        point_index: 700
+        point_index: 1226
     }
 }

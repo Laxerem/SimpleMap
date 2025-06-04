@@ -5588,4 +5588,4 @@ export const lines_geojson: GeoJSON.FeatureCollection<GeoJSON.LineString> = {
           }
         }
       ]
-    }
+}

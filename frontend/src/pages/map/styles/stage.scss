@@ -1,16 +1,34 @@
 @use '../../../assets/styles/global.scss' as *;
 
+$stage_height: clamp(9vh, 5vw, 13vh);
+
 .stage_display {
     @include flex_default();
     position: absolute;
     z-index: 1000;
-    height: clamp(7vh, 5vw, 10vh);
-    width: clamp(5rem, 10vh + 7vw, 20vw);
+    height: $stage_height;
+    width: clamp(10rem, 10vh + 7vw, 20vw);
     background-color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
     border-radius: 0px 0px 20px;
     text-align: center;
-    padding: 5px;
+    transition: 0.5s;
+}
+
+.stage_display:hover {
+    cursor: pointer;
+}
+
+.stage_info {
+    box-sizing: border-box;
+    padding: 2%;
+    position: absolute;
+    background-color: rgba(10, 33, 49, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    margin-top: $stage_height;
+    color: whitesmoke;
+    transition: 1s;
 }

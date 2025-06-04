@@ -239,7 +239,15 @@
     letter-spacing: 200%;
 }
 
-
+.block_text {
+    h2 {
+        text-align: center;
+    }
+    p {
+        margin-top: 20px;
+    }
+    width: 45%;
+}
 
 @keyframes move {
     0% {

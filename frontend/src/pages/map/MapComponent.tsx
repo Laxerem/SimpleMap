@@ -18,6 +18,7 @@ import { Mark } from '@mui/material/Slider/useSlider.types';
 import StageComponent from './StageComponent';
 
 
+
 const MapComponent: React.FC = () => {
     const {zoomContext, viewContext} = useMapContext()
 
