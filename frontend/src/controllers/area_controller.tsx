@@ -4,6 +4,7 @@ import { AreaData, StageArea } from "../pages/map/settings/interface/IWaySetting
 import { Polygon, Tooltip } from "react-leaflet"
 import { LatLngExpression, PolylineOptions } from "leaflet"
 import { useWayContext } from "../context/way/way_context"
+import WayObject from "../pages/map/way/way_object"
 
 interface AreaControllerProps {
     polygons_area: StageArea
@@ -21,7 +22,7 @@ const DefaultAreaStyle: PolylineOptions = {
 
 const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polygons_area}) => {
     const {zoomContext, setViewContext} = useMapContext()
-    const {setStageId} = useWayContext()
+    const {setStageId, setDistance} = useWayContext()
     const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; style?: PolylineOptions; stage_id: number; data: AreaData }[]>([]);
     
     useEffect(() => {
@@ -40,6 +41,7 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
         const coords: LatLngExpression = [view_coords[1], view_coords[0]]
 
         setStageId(stage_id)
+        setDistance(WayObject.get_stage(stage_id).distance)
         setViewContext(coords)
     }
 

@@ -51,4 +51,4 @@ interface WaySegment {
     total_distance: number
 }
 
-export type { Stages, StageArea, Area, AreaData, WayPoint, WayStage, WayPoints, WayStages, WaySegment }
+export type { Stage, Stages, StageArea, Area, AreaData, WayPoint, WayStage, WayPoints, WayStages, WaySegment }

@@ -15,6 +15,7 @@ import MapController from '../../controllers/core/MapController';
 import WayMap from './WayMap';
 import MapTimeLine from './TimeLine';
 import { Mark } from '@mui/material/Slider/useSlider.types';
+import StageComponent from './StageComponent';
 
 
 const MapComponent: React.FC = () => {
@@ -38,7 +39,9 @@ const MapComponent: React.FC = () => {
             zoom={zoomContext}
             className={"map"}
             preferCanvas={true}
+            zoomControl={false}
           >
+
 
             <TileLayer
               url="https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
@@ -46,8 +49,8 @@ const MapComponent: React.FC = () => {
             />
 
             {MapSettings.way_display ? <WayMap /> : null}
-            
             <MapController />
+            <StageComponent />
 
           </MapContainer>
           <MapTimeLine total_distance={distance} marks={marks}/>
