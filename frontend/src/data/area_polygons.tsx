@@ -4334,7 +4334,7 @@ export const areaPolygons: StageArea = {
         "Англия": {
             dynamic_area: {
                     8: {
-                        view_coords: [1, 1],
+                        view_coords: [-1.0760412223770288, 50.798903422058146],
                         geo_json: {
                             "coordinates": [
                             [
@@ -4576,7 +4576,7 @@ export const areaPolygons: StageArea = {
                         }
                     },
                     6: {
-                        view_coords: [1,1],
+                        view_coords: [-1.0760412223770288, 50.798903422058146],
                         geo_json: {
                             "coordinates": [
                             [
@@ -4926,7 +4926,7 @@ export const areaPolygons: StageArea = {
                         }
                     },
                     4: {
-                        view_coords: [-2.159467275135597, 53.99243121867201],
+                        view_coords: [-1.0760412223770288, 50.798903422058146],
                         geo_json: {
                             "coordinates": [
                             [
