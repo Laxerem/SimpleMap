@@ -4331,7 +4331,7 @@ export const areaPolygons: StageArea = {
             },
             stage_id: 1
         },
-        "Англия": {
+        "Портсмут": {
             dynamic_area: {
                     8: {
                         view_coords: [-1.0760412223770288, 50.798903422058146],

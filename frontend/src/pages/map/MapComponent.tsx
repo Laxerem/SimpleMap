@@ -49,8 +49,8 @@ const MapComponent: React.FC = () => {
               zIndex={0}
             />
 
-            {MapSettings.way_display ? <WayMap /> : null}
-            <MapController />
+            {MapSettings.way_display ? <WayMap way={WayObject.get_segments()}/> : null}
+            <MapController way_object={WayObject}/>
             <StageComponent />
 
           </MapContainer>

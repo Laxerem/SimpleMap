@@ -4,7 +4,7 @@ import { DiscoverParams } from "./discover"
 
 
 const belling: DiscoverParams = {
-  name: "Белленсгаузен Фаддей",
+  name: "Беллинсгаузен Фаддей",
   image_class: "belling",
   hide_name: "Фаддей Фаддеевич Беллинсгаузен (1778–1852)",
   description: "Руководитель первой русской антарктической экспедиции.",
@@ -25,7 +25,7 @@ const lazar: DiscoverParams = {
   ]
 }
 
-const Discoverers_content = () => {
+const Discoverers_content: React.FC = () => {
   return (
   <div className="block_text">
     <h2>Первооткрыватели</h2>

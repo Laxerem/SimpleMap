@@ -7,14 +7,14 @@ $stage_height: clamp(9vh, 5vw, 13vh);
     position: absolute;
     z-index: 1000;
     height: $stage_height;
-    width: clamp(10rem, 10vh + 7vw, 20vw);
+    width: 13vw;
     background-color: whitesmoke;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
     border-radius: 0px 0px 20px;
     text-align: center;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .stage_display:hover {
@@ -23,12 +23,17 @@ $stage_height: clamp(9vh, 5vw, 13vh);
 
 .stage_info {
     box-sizing: border-box;
-    padding: 2%;
+    height: calc(100% - $stage_height);
     position: absolute;
-    background-color: rgba(10, 33, 49, 0.3);
+    background-color: rgba(10, 33, 49, 0.4);
     backdrop-filter: blur(10px);
+    border-radius: 0px 20px;
     z-index: 1000;
     margin-top: $stage_height;
     color: whitesmoke;
     transition: 1s;
+}
+
+.stage_info_text {
+    max-width: 300px;
 }

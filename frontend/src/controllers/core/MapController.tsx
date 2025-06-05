@@ -1,20 +1,27 @@
-import React from "react"
+import React, { PropsWithChildren } from "react"
 import { useMap } from "react-leaflet";
 
 import ViewController from "../view_controller";
 import ZoomController from "../zoom_controller"
-import WayMapController from "./WayMapController";
+import { areaPolygons } from "../../data/area_polygons";
+import AreaController from "../area_controller";
+import StageController from "../stage_controller";
 
-import WayObject from "../../pages/map/way/way_object";
+import WayCounter from "../../pages/map/way/WayCounter";
 
-const MapController: React.FC = () => {
+interface MapControllerProps {
+    way_object: WayCounter
+}
+
+const MapController: React.FC<PropsWithChildren<MapControllerProps>> = ({way_object}) => {
     const map = useMap()
     
     return (
         <>
         <ViewController map={map}/>
         <ZoomController map={map}/>
-        <WayMapController way_object={WayObject}/>
+        <AreaController polygons_area={areaPolygons}/>
+        <StageController way_object={way_object}/>
         </>
     )
 }

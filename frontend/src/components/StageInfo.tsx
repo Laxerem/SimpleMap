@@ -6,17 +6,19 @@ interface StageInfoProps {
 }
 
 const StageInfo: React.FC<PropsWithChildren<StageInfoProps>> = ({data}) => {
-    const [height, setHeight] = useState<number>(0)
-    const [weight, setWeight] = useState<number>(15)
+    const [width, setWidth] = useState<number>(0) 
     
     const [text, setText] = useState<string>("")
     const [opacity, setOpacity] = useState<number>(0)
+    const [padding, setPadding] = useState<number>(0)
 
     useEffect(() => {
         setTimeout(() => {
-            setHeight(100)
-            setWeight(30)
+            setWidth(23)
         }, 1)
+        setTimeout(() => {
+            setPadding(2)
+        }, 100)
         setTimeout(() => {
             setText(data.status)
         }, 900)
@@ -27,9 +29,9 @@ const StageInfo: React.FC<PropsWithChildren<StageInfoProps>> = ({data}) => {
 
     return (
         <div className="stage_info block_text"
-        style={{height: `${height}%`, width: `${weight}vw`}}
+        style={{width: `${width}vw`, padding: `${padding}%`}}
         >
-            <div style={{opacity: `${opacity}`, transition: "1s"}}>
+            <div className="stage_info_text" style={{opacity: `${opacity}`, transition: "1s"}}>
                 <p>{text}</p>
             </div>
         </div>
