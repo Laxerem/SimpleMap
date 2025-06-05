@@ -7,7 +7,7 @@ const StagePointIcon: Icon = new L.Icon({
 
 const WayShipIcon: Icon = new L.Icon({
     iconUrl: "/BellinsgauzenShip.png",
-    iconSize: [60,60]
+    iconSize: [50,50]
 })
 
 export { StagePointIcon, WayShipIcon }

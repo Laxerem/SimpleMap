@@ -1,10 +1,11 @@
 import React, { PropsWithChildren, useEffect, useState } from "react"
 import { useMapContext } from "../context/map/map_context"
 import { AreaData, StageArea } from "../pages/map/settings/interface/IWaySettings"
-import { Polygon, Tooltip } from "react-leaflet"
+import { Polygon } from "react-leaflet"
 import { LatLngExpression, PolylineOptions } from "leaflet"
 import { useWayContext } from "../context/way/way_context"
 import WayObject from "../pages/map/way/way_object"
+import TextMarker, { ITextMarker } from "../components/TextMarker"
 
 interface AreaControllerProps {
     polygons_area: StageArea
@@ -24,6 +25,8 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
     const {zoomContext, setViewContext} = useMapContext()
     const {setStageId, setDistance} = useWayContext()
     const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; style?: PolylineOptions; stage_id: number; data: AreaData }[]>([]);
+    const [areaText, setAreaText] = useState<ITextMarker>({text: "", position: [0,0], size: [0,0]})
+    const [isHover, setIsHover] = useState<boolean>(false)
     
     useEffect(() => {
         const newPolygons = Object.entries(polygons_area)
@@ -35,14 +38,19 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
           setRequiredPolygons(newPolygons);
         }
 
-      }, [polygons_area, zoomContext]);
-    
+    }, [polygons_area, zoomContext]);
+
     const handle_click = (stage_id: number, view_coords: any) => {
         const coords: LatLngExpression = [view_coords[1], view_coords[0]]
 
         setStageId(stage_id)
         setDistance(WayObject.get_stage(stage_id).distance)
         setViewContext(coords)
+    }
+
+    const handle_hover = (data: AreaData, text: string) => {
+        setAreaText({text: text, position: data.view_coords, size: [4,4]})
+        setIsHover(!isHover)
     }
 
     return (
@@ -53,11 +61,12 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
                     key={key} 
                     positions={convertGeoJsonToLatLng(data.geo_json)}
                     eventHandlers={{
-                        click: () => handle_click(stage_id, data.view_coords)
+                        click: () => handle_click(stage_id, data.view_coords),
+                        mouseover: () => handle_hover(data, key)
                     }}
                     {...(style || DefaultAreaStyle)}
                     >
-                        <Tooltip sticky direction="top">{key}</Tooltip>
+                    
                     </Polygon>
                 ))
             }

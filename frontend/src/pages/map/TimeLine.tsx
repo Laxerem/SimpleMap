@@ -39,8 +39,6 @@ const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({total_distance
         }
     }, [distance])
 
-
-
     return (
         <div className='timeLine_container'>
             <div className='TimeLine'>

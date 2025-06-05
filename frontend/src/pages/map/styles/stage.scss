@@ -37,3 +37,11 @@ $stage_height: clamp(9vh, 5vw, 13vh);
 .stage_info_text {
     max-width: 300px;
 }
+
+.default_text_marker {
+    pointer-events: none;
+    p {
+        color: greenyellow;
+        font-size: 17px;
+    }
+}

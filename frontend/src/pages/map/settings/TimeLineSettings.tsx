@@ -9,6 +9,7 @@ const timeLineStyle: SxProps<Theme> = {
 
 const timeLineProps: SliderProps = {
     "aria-label": "Temperature",
+    color: 'error',
     min: 0,
     sx: timeLineStyle,
 }
