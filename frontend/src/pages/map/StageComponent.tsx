@@ -25,10 +25,6 @@ const StageComponent: React.FC = () => {
         setInfo(stages_info[stageId])
     }, [stageId])
 
-    useEffect(() => {
-
-    }, [isClicked])
-
     return(
         <div>
             <div className="stage_display" 

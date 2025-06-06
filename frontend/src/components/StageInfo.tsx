@@ -8,31 +8,37 @@ interface StageInfoProps {
 const StageInfo: React.FC<PropsWithChildren<StageInfoProps>> = ({data}) => {
     const [width, setWidth] = useState<number>(0) 
     
+    const [textColor, setTextColor] = useState<string>("")
     const [text, setText] = useState<string>("")
     const [opacity, setOpacity] = useState<number>(0)
     const [padding, setPadding] = useState<number>(0)
 
     useEffect(() => {
+        setText("")
+        setPadding(0)
+        setWidth(0)
+
         setTimeout(() => {
             setWidth(23)
-        }, 1)
+        }, 1000)
         setTimeout(() => {
             setPadding(2)
-        }, 100)
+        }, 1200)
         setTimeout(() => {
             setText(data.status)
-        }, 900)
+        }, 1400)
         setTimeout(() => {
             setOpacity(1)
-        }, 1000)
-    }, [])
+        }, 1900)
+
+    }, [data])
 
     return (
         <div className="stage_info block_text"
         style={{width: `${width}vw`, padding: `${padding}%`}}
         >
             <div className="stage_info_text" style={{opacity: `${opacity}`, transition: "1s"}}>
-                <p>{text}</p>
+                <p style={{color: `${textColor}`}}>{text}</p>
             </div>
         </div>
     )
