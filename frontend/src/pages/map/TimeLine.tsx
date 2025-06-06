@@ -13,13 +13,13 @@ interface TimeLineProps {
     marks: Mark[]
 }
 
-let MAX = 100
+let MAX = 1000
 
 const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({total_distance, marks}) => {
     const [value, setValue] = useState<number>(0)
     const {distance, setDistance} = useWayContext()
 
-    const one_step = total_distance / 100
+    const one_step = total_distance / MAX
 
     let local_distance = 0
 

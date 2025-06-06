@@ -5,7 +5,6 @@ import { Polygon } from "react-leaflet"
 import { LatLngExpression, PolylineOptions } from "leaflet"
 import { useWayContext } from "../context/way/way_context"
 import WayObject from "../pages/map/way/way_object"
-import TextMarker, { ITextMarker } from "../components/TextMarker"
 
 interface AreaControllerProps {
     polygons_area: StageArea
@@ -25,7 +24,6 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
     const {zoomContext, setViewContext} = useMapContext()
     const {setStageId, setDistance} = useWayContext()
     const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; style?: PolylineOptions; stage_id: number; data: AreaData }[]>([]);
-    const [areaText, setAreaText] = useState<ITextMarker>({text: "", position: [0,0], size: [0,0]})
     const [isHover, setIsHover] = useState<boolean>(false)
     
     useEffect(() => {
@@ -48,8 +46,7 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
         setViewContext(coords)
     }
 
-    const handle_hover = (data: AreaData, text: string) => {
-        setAreaText({text: text, position: data.view_coords, size: [4,4]})
+    const handle_hover = () => {
         setIsHover(!isHover)
     }
 
@@ -62,7 +59,7 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
                     positions={convertGeoJsonToLatLng(data.geo_json)}
                     eventHandlers={{
                         click: () => handle_click(stage_id, data.view_coords),
-                        mouseover: () => handle_hover(data, key)
+                        mouseover: () => handle_hover()
                     }}
                     {...(style || DefaultAreaStyle)}
                     >

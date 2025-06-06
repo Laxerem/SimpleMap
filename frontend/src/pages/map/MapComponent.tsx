@@ -26,7 +26,7 @@ const MapComponent: React.FC = () => {
 
     const marks: Mark[] = Object.keys(WayObject.get_all_stages()).map(key => WayObject.get_stage(Number(key))).map(way_stage => ({
       label: way_stage.stage.name,
-      value: 100 / (distance / way_stage.distance)
+      value: 1000 / (distance / way_stage.distance)
     }))
 
     return (
