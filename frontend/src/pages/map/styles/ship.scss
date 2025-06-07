@@ -1,0 +1,25 @@
+@use '../../../assets/styles/global.scss' as *;
+
+$settings_height: clamp(9vh, 5vw, 13vh);
+
+.ship_settings_container {
+    @include flex_default(flex-end);
+    position: absolute;
+    z-index: 1000;
+    right: 0px;
+    height: $settings_height;
+    width: 6%;
+    background-color: rgba(10, 33, 49, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 0px 0px 20px 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/settings_ship.png);
+    transform: scaleX(-1);
+    transition: 1s;
+}
+
+.ship_settings_container:hover {
+    cursor: pointer;
+}

@@ -1,10 +1,10 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
-import { useWayContext } from "../../context/way/way_context";
+import { useWayContext } from "../../../context/way/way_context";
 import { Polyline } from "react-leaflet";
-import { WaySegment } from "./settings/interface/IWaySettings";
+import { WaySegment } from "../settings/interface/IWaySettings";
 import { Icon } from "leaflet";
-import Ship from "../../components/Ship";
-import { WayShipIcon } from "../../data/icons";
+import Ship from "../../../components/Ship";
+import { WayShipIcon } from "../../../data/icons";
 
 interface WayMapProps {
   way: WaySegment[];

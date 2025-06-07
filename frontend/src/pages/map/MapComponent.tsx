@@ -12,12 +12,10 @@ import MapContextListner from '../../context/map/context_listner';
 import WayContextProvider from '../../context/way/provider';
 import { useMapContext } from '../../context/map/map_context';
 import MapController from '../../controllers/core/MapController';
-import WayMap from './WayMap';
 import MapTimeLine from './TimeLine';
 import { Mark } from '@mui/material/Slider/useSlider.types';
-import StageComponent from './StageComponent';
 
-
+import MapOverlay from './MapOverlay';
 
 const MapComponent: React.FC = () => {
     const {zoomContext, viewContext} = useMapContext()
@@ -49,9 +47,8 @@ const MapComponent: React.FC = () => {
               zIndex={0}
             />
 
-            {MapSettings.way_display ? <WayMap way={WayObject.get_segments()}/> : null}
             <MapController way_object={WayObject}/>
-            <StageComponent />
+            <MapOverlay />
 
           </MapContainer>
           <MapTimeLine total_distance={distance} marks={marks}/>

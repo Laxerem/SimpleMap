@@ -9,12 +9,12 @@ $stage_height: clamp(9vh, 5vw, 13vh);
     height: $stage_height;
     width: 13vw;
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(17px, 1.3vw, 100px);
+    font-size: clamp(14px, 1.3vw, 100px);
     font-weight: 600;
     border-radius: 0px 0px 20px;
     text-align: center;
     transition: 1s;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
               url('/blue_gradient.png') center/cover no-repeat;
     background-size: 100%;
     animation: gradientMove 20s ease-in-out infinite;
@@ -41,17 +41,23 @@ $stage_height: clamp(9vh, 5vw, 13vh);
     box-sizing: border-box;
     height: calc(100% - $stage_height);
     position: absolute;
-    background-color: rgba(10, 33, 49, 0.4);
+    background-color: rgba(10, 33, 49, 0.7);
     backdrop-filter: blur(10px);
     border-radius: 0px 20px;
-    z-index: 1000;
+    z-index: 2000;
     margin-top: $stage_height;
     color: whitesmoke;
-    transition: 1s;
+    transition: 0.8s;
+    pointer-events: auto; 
+    min-height: 200px;
+    overflow-y: auto; 
 }
 
 .stage_info_text {
     max-width: 300px;
+    p {
+      font-weight: 600;
+    }
 }
 
 .default_text_marker {
@@ -60,4 +66,25 @@ $stage_height: clamp(9vh, 5vw, 13vh);
         color: greenyellow;
         font-size: 17px;
     }
+}
+
+.stage_info_text {
+  transition: opacity 1s;
+}
+
+.stage_info::-webkit-scrollbar {
+  width: 8px; // Ширина скроллбара
+}
+
+.stage_info::-webkit-scrollbar-track {
+  background: transparent; // Фон трека
+}
+
+.stage_info::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); // Цвет ползунка
+  border-radius: 4px;
+}
+
+.stage_info::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.7); // При наведении
 }
