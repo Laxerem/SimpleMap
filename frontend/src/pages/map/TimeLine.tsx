@@ -21,7 +21,7 @@ const MapTimeLine: React.FC<PropsWithChildren<TimeLineProps>> = ({total_distance
 
     const one_step = total_distance / MAX
 
-    let local_distance = 0
+    let local_distance = NaN
 
     const handleChange = (_event: Event, newValue: number | number[]) => {
         const new_value = newValue as number
