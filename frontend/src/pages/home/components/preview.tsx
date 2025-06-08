@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export type PreviewInfo = {
   delay: number;
   images: Array<string>;
-  transition: number
+  transition: number;
 };
 
 type BlockNavigation = {
@@ -15,54 +15,68 @@ type BlockNavigation = {
 
 const HomePresentation: React.FC<{ info: PreviewInfo }> = ({ info }) => {
   const navigate = useNavigate();
-  const [currentImageId, setCurrentImageId] = useState<number>(0)
-  const [opacity, setOpacity] = useState<number>(0)
+  const [currentImageId, setCurrentImageId] = useState<number>(0);
+  const [opacity, setOpacity] = useState<number>(0);
+  const timeoutRefs = useRef<NodeJS.Timeout[]>([]); // Массив для всех таймеров
 
   const blocks: BlockNavigation[] = [
     {
-      name: 'Карта',
-      link: '/map',
-      classname: 'block_navigation background_map',
+      name: "Карта",
+      link: "/map",
+      classname: "block_navigation background_map",
     },
     {
-      name: 'Атлас',
-      link: '/atlas',
-      classname: 'block_navigation',
-    }
-    // сюда можно добавлять другие блоки
+      name: "Атлас",
+      link: "/atlas",
+      classname: "block_navigation",
+    },
   ];
 
   const next_index = (array: Array<any>) => {
-    if (array.length > currentImageId + 1) {
-      return currentImageId + 1
-    }
-    else {
-      return 0
-    }
-  }
+    return array.length > currentImageId + 1 ? currentImageId + 1 : 0;
+  };
 
   useEffect(() => {
-      setOpacity(0)
-      setTimeout(() => {
-        setOpacity(1)
-        setTimeout(() => {
-          setCurrentImageId(next_index(info.images))
-        }, info.transition * 600)
-      }, info.delay - (info.transition * 1000))
-      
-  }, [currentImageId])
+    // Очистка всех предыдущих таймеров
+    timeoutRefs.current.forEach((timer) => clearTimeout(timer));
+    timeoutRefs.current = []; // Сбрасываем массив
+
+    setOpacity(0); // Скрываем
+    console.log("Показываю", new Date().toLocaleTimeString()); // Логи с временем
+
+    const firstTimeout = setTimeout(() => {
+      setOpacity(1); // Показываем
+      console.log("Затемняю", new Date().toLocaleTimeString());
+      const secondTimeout = setTimeout(() => {
+        console.log("Меняю картинку", new Date().toLocaleTimeString());
+        setCurrentImageId(next_index(info.images));
+      }, info.transition * 600);
+      timeoutRefs.current.push(secondTimeout); // Сохраняем второй таймер
+    }, info.delay - info.transition * 1000);
+
+    timeoutRefs.current.push(firstTimeout); // Сохраняем первый таймер
+
+    // Очистка при размонтировании
+    return () => {
+      timeoutRefs.current.forEach((timer) => clearTimeout(timer));
+      timeoutRefs.current = [];
+    };
+  }, [currentImageId, info.delay, info.transition, info.images.length]);
 
   return (
-    <div className="antarctica"
-    style={{
-      backgroundImage: `url(/${info.images[currentImageId]})`
-    }}
+    <div
+      className="antarctica"
+      style={{
+        backgroundImage: `url(${info.images[currentImageId]})`, // Исправлен синтаксис
+      }}
     >
-    <div style={{
-      backgroundColor: `rgba(0,0,0,${opacity})`,
-      transition: `${info.transition}s`
-    }}>
-      <div className='preview'>
+      <div
+        style={{
+          backgroundColor: `rgba(0,0,0,${opacity})`,
+          transition: `${info.transition}s`,
+        }}
+      >
+        <div className="preview">
           <h1 className="home_name">
             Открытие <br />
             Антарктиды

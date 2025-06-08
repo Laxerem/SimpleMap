@@ -4,7 +4,7 @@ const Prehistory = () => {
     <div className="prehistory_container">
       <div className="prehistory_content">
         <div className="block_text">
-          <h2>Предыстория</h2>
+          <h2>Дорога к открытию</h2>
           <p>
           До открытия Антарктиды долгое время существовали 
           гипотезы о существовании неизвестного южного континента, 
