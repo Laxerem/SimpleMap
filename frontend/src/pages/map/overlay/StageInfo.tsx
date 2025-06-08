@@ -1,18 +1,15 @@
 import { PropsWithChildren, useEffect, useState } from "react";
-import { StageData } from "../pages/map/settings/interface/IWaySettings";
+import '../styles/stage_info.scss'
 
-interface StageInfoProps {
-  data: StageData;
-}
-
-const StageInfo: React.FC<PropsWithChildren<StageInfoProps>> = ({ data }) => {
+const StageInfo: React.FC<PropsWithChildren> = ({ children }) => {
+    const [minWidth, setMinWidth] = useState<number>(0)
     const [width, setWidth] = useState<number>(0);
-    const [text, setText] = useState<string>("");
     const [opacity, setOpacity] = useState<number>(0);
     const [padding, setPadding] = useState<number>(0);
+    const [content, setContent] = useState<React.ReactNode | null>(null);
 
     useEffect(() => {
-        setText("");
+        setContent(null)
         setPadding(0);
         setWidth(0);
 
@@ -23,23 +20,24 @@ const StageInfo: React.FC<PropsWithChildren<StageInfoProps>> = ({ data }) => {
             setPadding(2);
         }, 1200);
         setTimeout(() => {
-            setText(data.status);
+            setContent(children)
         }, 1400);
         setTimeout(() => {
             setOpacity(1);
         }, 1900);
-    }, [data]);
+    }, [children]);
 
     return (
         <div
         className="stage_info block_text"
         style={{
+            minWidth: `${minWidth}px`,
             width: `${width}vw`,
             padding: `${padding}%`
         }}
         >
         <div className="stage_info_text" style={{ opacity: `${opacity}`, transition: "1s" }}>
-            <p>{text.repeat(100)}</p>
+            {content}
         </div>
         </div>
     );

@@ -4329,7 +4329,7 @@ export const areaPolygons: StageArea = {
                     }
                 }
             },
-            stage_id: 1
+            stage_id: 2
         },
         "Портсмут": {
             dynamic_area: {
@@ -5554,7 +5554,7 @@ export const areaPolygons: StageArea = {
                     }
                 },
             },
-            stage_id: 2,
+            stage_id: 4,
             style: {
                 color: "red",
                 weight: 1

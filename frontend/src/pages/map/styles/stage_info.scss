@@ -1,0 +1,31 @@
+@use '../../../assets/styles/global.scss' as *;
+
+$ParagraphSize: clamp(7px, 0.6vw + 0.6vh, 1.5vw);
+$FirstHeaderSize: clamp(15px, 1.2vw + 1vh, 2vw);
+$SecondHeaderSize: clamp(12px, 1.1vw + 1vh, 1.8vw);
+
+.stage_info_text {
+    max-width: 300px;
+    transition: opacity 1s;
+    p {
+      font-weight: 600;
+      font-size: $ParagraphSize;
+    }
+    h1 {
+      font-size: $FirstHeaderSize;
+    }
+    h2 {
+        text-align: left;
+        margin-top: 7%;
+        font-size: $SecondHeaderSize;
+    }
+    ul, ol {
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+
+    li {
+        font-family: 'Montserrat', sans-serif;
+        font-size: $ParagraphSize;
+    }
+}

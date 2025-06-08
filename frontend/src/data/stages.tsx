@@ -7,18 +7,28 @@ export const stages: Stages = {
         point_index: 0
     },
     1: {
-        name: "Копенганен",
+        name: "Путь в Данию",
+        date: "1869",
+        point_index: 75
+    },
+    2: {
+        name: "Заход в Копенгаген",
         date: "1869",
         point_index: 100
     },
-    2: {
-        name: "Англия",
-        date: "1869",
-        point_index: 200
-    },
     3: {
-        name: "Лиссабон",
+        name: "Путь в Англию",
         date: "2000",
-        point_index: 1226
+        point_index: 185
+    },
+    4: {
+        name: "Заход в Портсмут",
+        date: "2000",
+        point_index: 210
+    },
+    5: {
+        name: "Заход в Портсмут",
+        date: "2000",
+        point_index: 210
     }
 }

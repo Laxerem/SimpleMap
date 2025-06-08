@@ -1,4 +1,5 @@
 import { LatLngExpression, PolylineOptions } from "leaflet"
+import React from "react"
 
 interface Stage {
     name: string,
@@ -11,6 +12,7 @@ interface Stages {
 }
 
 interface StageData {
+    stage_component: React.FC,
     status: string
 }
 

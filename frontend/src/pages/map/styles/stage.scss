@@ -19,6 +19,7 @@ $stage_height: clamp(9vh, 5vw, 13vh);
     background-size: 100%;
     animation: gradientMove 20s ease-in-out infinite;
     color: whitesmoke;
+    min-width: 200px;
 }
 
 @keyframes gradientMove {
@@ -53,23 +54,12 @@ $stage_height: clamp(9vh, 5vw, 13vh);
     overflow-y: auto; 
 }
 
-.stage_info_text {
-    max-width: 300px;
-    p {
-      font-weight: 600;
-    }
-}
-
 .default_text_marker {
     pointer-events: none;
     p {
         color: greenyellow;
         font-size: 17px;
     }
-}
-
-.stage_info_text {
-  transition: opacity 1s;
 }
 
 .stage_info::-webkit-scrollbar {
