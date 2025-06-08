@@ -61,6 +61,16 @@ p {
     background-position: center;
 }
 
+.box_shadow {
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+}
+
+.box_shadow:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
 %default_background_image {
     background-size: cover;
     background-position: center;

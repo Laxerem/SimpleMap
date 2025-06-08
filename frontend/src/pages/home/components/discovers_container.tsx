@@ -6,6 +6,7 @@ import { DiscoverParams } from "./discover"
 const belling: DiscoverParams = {
   name: "Беллинсгаузен Фаддей",
   image_class: "belling",
+  image_name: "Bellingshausen.png",
   hide_name: "Фаддей Фаддеевич Беллинсгаузен (1778–1852)",
   description: "Руководитель первой русской антарктической экспедиции.",
   facts: ["Командовал шлюпом 'Восток' в 1819–1821 гг., официально открыл Антарктиду.", 
@@ -17,6 +18,7 @@ const belling: DiscoverParams = {
 const lazar: DiscoverParams = {
   name: "Лазарев Михаил",
   image_class: "lazar",
+  image_name: "Lazarev.png",
   hide_name: "Михаил Петрович Лазарев (1788–1851)",
   description: "Капитан шлюпа 'Мирный' в экспедиции Беллинсгаузена, флотоводец.",
   facts: ["Участвовал в открытии Антарктиды 28 января 1820 года.", 
@@ -44,37 +46,37 @@ const Discoverers_content: React.FC = () => {
 } 
 
 const Discovers_container = () => {
-  const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  useEffect(() => {
+    useEffect(() => {
     const checkScreen = () => {
-      setIsMobile(window.innerWidth <= 700);
+        setIsMobile(window.innerWidth <= 700);
     };
 
     checkScreen(); // установить при загрузке
     window.addEventListener("resize", checkScreen);
 
     return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+    }, []);
 
-  return (
-  <div className="discoverers_container">
-    {isMobile ? (
-      <>
-      <div className="discoverers_mob">
+    return (
+    <div className="discoverers_container">
+        {isMobile ? (
+        <>
+        <div className="discoverers_mob">
+            <Discoverer discover={belling}/>
+            <Discoverer discover={lazar}/>
+        </div>
+        <Discoverers_content />
+        </>
+        ) : (
+        <>
         <Discoverer discover={belling}/>
+        <Discoverers_content />
         <Discoverer discover={lazar}/>
-      </div>
-      <Discoverers_content />
-      </>
-    ) : (
-    <>
-    <Discoverer discover={belling}/>
-    <Discoverers_content />
-    <Discoverer discover={lazar}/>
-    </>
+        </>
     )}
-  </div>
+    </div>
 )
 }
 

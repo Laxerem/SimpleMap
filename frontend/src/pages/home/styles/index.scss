@@ -29,25 +29,23 @@
     width: var(--dis_width);
     min-width: var(--dis_min-width);
     margin-bottom: 10%;
-    padding: 5%
+    padding: 5%;
 }
 
 .antarctica {
     @extend %default_background_image;
-    background-image: url(../../../public/Antarctica.png);
+    background-image: url(/Antarctica.png);
 }
 
 .belling {
     @extend %default_background_image;
     @extend %discovers;
-    background-image: url(../../../public/Bellingshausen.png);
     border-radius: 0px 35% 0px 0px;
 }
 
 .lazar {
     @extend %default_background_image;
     @extend %discovers;
-    background-image: url(../../../public/Lazarev.png);
     border-radius: 0px 0px 0px 35%;
 }
 
@@ -134,9 +132,30 @@
     }
 }
 
+
+.discover:hover {
+    cursor: pointer;
+}
+
 .discover_image_content {
-    display: none;
     color: var(--text_color);
+    transition: 1s;
+
+    h4 {
+        text-align: center;
+        font-size: clamp(10px, 1vw + 0.5vh, 2vw);
+        font-weight: 600;
+    }
+
+    p {
+        margin: 5% 0 5% 0;
+        font-size: clamp(10px, 0.8vw + 0.5vh, 2vw);
+        font-weight: 600;
+    }
+
+    li {
+        font-family: 'Montserrat', sans-serif;
+    }
 }
 
 .discoverers_content {
