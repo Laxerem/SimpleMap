@@ -16,7 +16,7 @@ type BlockNavigation = {
 const HomePresentation: React.FC<{ info: PreviewInfo }> = ({ info }) => {
   const navigate = useNavigate();
   const [currentImageId, setCurrentImageId] = useState<number>(0)
-  const [opacity, setOpacity] = useState<number>(1)
+  const [opacity, setOpacity] = useState<number>(0)
 
   const blocks: BlockNavigation[] = [
     {
