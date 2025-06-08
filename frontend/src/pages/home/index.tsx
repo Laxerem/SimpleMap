@@ -5,8 +5,9 @@ import Antarctica_facts from "./components/facts"
 import Prehistory from "./components/prehistory"
 
 const preview_settings: PreviewInfo = {
-  delay: 5,
-  image_directory: "./"
+  delay: 15000,
+  transition: 6,
+  images: ["Antarctica.png", "Antarctica_2.png"]
 }
 
 const Home = () => {
