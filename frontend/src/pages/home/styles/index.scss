@@ -149,12 +149,19 @@
 
     p {
         margin: 5% 0 5% 0;
-        font-size: clamp(10px, 0.8vw + 0.5vh, 2vw);
-        font-weight: 600;
+        font-size: clamp(7px, 0.8vw + 0.5vh, 2vw);
+        font-weight: 500;
     }
 
     li {
+        margin-top: 2%;
         font-family: 'Montserrat', sans-serif;
+        font-size: clamp(5px, 0.8vw + 0.5vh, 2vw);
+        text-align: left;
+    }
+
+    ul {
+        margin-left: 10%;
     }
 }
 
