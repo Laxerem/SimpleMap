@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useWayContext } from "../../../context/way/way_context";
 import { useMapContext } from "../../../context/map/map_context";
 import '../styles/ship.scss'
@@ -11,8 +11,13 @@ const ShipSettings: React.FC = () => {
 
     const handleClick = () => {
         setIsClicked(!isClicked)
-        setWidth(isClicked ? null : 20)
     }
+
+    useEffect(() => {
+        if (isClicked && coords) {
+            setViewContext(coords)
+        }
+    }, [isClicked, coords])
 
     return (
         <div className="ship_settings_container" 
