@@ -39,22 +39,18 @@ const HomePresentation: React.FC<{ info: PreviewInfo }> = ({ info }) => {
   useEffect(() => {
     // Очистка всех предыдущих таймеров
     timeoutRefs.current.forEach((timer) => clearTimeout(timer));
-    timeoutRefs.current = []; // Сбрасываем массив
+    timeoutRefs.current = []; 
 
-    setOpacity(0); // Скрываем
-    console.log("Показываю", new Date().toLocaleTimeString()); // Логи с временем
-
+    setOpacity(0); 
     const firstTimeout = setTimeout(() => {
       setOpacity(1); // Показываем
-      console.log("Затемняю", new Date().toLocaleTimeString());
       const secondTimeout = setTimeout(() => {
-        console.log("Меняю картинку", new Date().toLocaleTimeString());
         setCurrentImageId(next_index(info.images));
       }, info.transition * 600);
-      timeoutRefs.current.push(secondTimeout); // Сохраняем второй таймер
+      timeoutRefs.current.push(secondTimeout); 
     }, info.delay - info.transition * 1000);
 
-    timeoutRefs.current.push(firstTimeout); // Сохраняем первый таймер
+    timeoutRefs.current.push(firstTimeout); 
 
     // Очистка при размонтировании
     return () => {

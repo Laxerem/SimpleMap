@@ -12,12 +12,14 @@ const StageInfo: React.FC<PropsWithChildren> = ({ children }) => {
         setContent(null)
         setPadding(0);
         setWidth(0);
+        setMinWidth(0)
 
         setTimeout(() => {
             setWidth(23);
         }, 800);
         setTimeout(() => {
             setPadding(2);
+            setMinWidth(200)
         }, 1200);
         setTimeout(() => {
             setContent(children)

@@ -22,7 +22,7 @@ const DefaultAreaStyle: PolylineOptions = {
 
 const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polygons_area}) => {
     const {zoomContext, setViewContext} = useMapContext()
-    const {setStageId, setDistance} = useWayContext()
+    const {setStageId, setDistance, setStageInfoWindow} = useWayContext()
     const [requiredPolygons, setRequiredPolygons] = useState<{ key: string; style?: PolylineOptions; stage_id: number; data: AreaData }[]>([]);
     const [isHover, setIsHover] = useState<boolean>(false)
     
@@ -44,6 +44,7 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
         setStageId(stage_id)
         setDistance(WayObject.get_stage(stage_id).distance)
         setViewContext(coords)
+        setStageInfoWindow(true)
     }
 
     const handle_hover = () => {

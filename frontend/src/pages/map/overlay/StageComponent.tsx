@@ -10,17 +10,16 @@ import { useMap } from "react-leaflet"
 
 const StageComponent: React.FC = () => {
     const map = useMap()
-    const {stageId} = useWayContext()
+    const {stageId, stageInfoWindow, setStageInfoWindow} = useWayContext()
     const [stage, setStage] = useState<Stage>(way_object.get_stage(stageId).stage)
     const [content, setContent] = useState<StageData>(stages_info[stageId])
-    const [isClicked, setIsClicked] = useState<boolean>(false);
     const [width, setWidth] = useState<number | null>(null);
     const [isHovered, setIsHovered] = useState<boolean>(false)
     
 
     const handleClick = () => {
-        setIsClicked(!isClicked);
-        setWidth(isClicked ? null : 23)
+        setStageInfoWindow(!stageInfoWindow)
+        setWidth(stageInfoWindow ? null : 23)
     };
 
     useEffect(() => {
@@ -28,6 +27,10 @@ const StageComponent: React.FC = () => {
         setStage(new_stage)
         setContent(stages_info[stageId])
     }, [stageId])
+
+    useEffect(() => {
+        setWidth(stageInfoWindow ? 23: null)
+    }, [stageInfoWindow])
 
     useEffect(() => {
         if (isHovered) {
@@ -52,7 +55,7 @@ const StageComponent: React.FC = () => {
             >
                 {stage.name}
             </div>
-            { isClicked && content ? <StageInfo children={content.stage_component as unknown as ReactNode}/> : null }
+            { stageInfoWindow && content ? <StageInfo children={content.stage_component as unknown as ReactNode}/> : null }
         </div>
     )
 }
