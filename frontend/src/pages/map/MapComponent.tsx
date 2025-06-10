@@ -14,6 +14,7 @@ import { useMapContext } from '../../context/map/map_context';
 import MapController from '../../controllers/core/MapController';
 import MapTimeLine from './TimeLine';
 import { Mark } from '@mui/material/Slider/useSlider.types';
+import { timeLineMarks } from '../../data/timeline_marks';
 
 import MapOverlay from './MapOverlay';
 
@@ -22,10 +23,7 @@ const MapComponent: React.FC = () => {
 
     const distance = WayObject.total_distance()
 
-    const marks: Mark[] = Object.keys(WayObject.get_all_stages()).map(key => WayObject.get_stage(Number(key))).map(way_stage => ({
-      label: way_stage.stage.name,
-      value: 1000 / (distance / way_stage.distance)
-    }))
+    const marks: Mark[] = timeLineMarks.map(time => time.mark)
 
     return (
         <WayContextProvider>

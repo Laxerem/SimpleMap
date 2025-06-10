@@ -27,8 +27,18 @@ export const stages: Stages = {
         point_index: 210
     },
     5: {
-        name: "Заход в Портсмут",
+        name: "Путь в Рио-Де-Жанейро",
         date: "2000",
-        point_index: 210
+        point_index: 360
+    },
+    6: {
+        name: "Остановка в Рио-Де-Жанейро",
+        date: "2000",
+        point_index: 365
+    },
+    7: {
+        name: "Остановка в Южной Георгии",
+        date: "2000",
+        point_index: 413
     }
 }
