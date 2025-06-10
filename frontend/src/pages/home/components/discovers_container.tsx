@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Discoverer from "./discover"
 import { DiscoverParams } from "./discover"
+import TripleFlexContainer from "../../../components/TripleFlexContainer";
 
 
 const belling: DiscoverParams = {
@@ -46,38 +47,14 @@ const Discoverers_content: React.FC = () => {
 } 
 
 const Discovers_container = () => {
-    const [isMobile, setIsMobile] = useState<boolean>(false);
-
-    useEffect(() => {
-    const checkScreen = () => {
-        setIsMobile(window.innerWidth <= 700);
-    };
-
-    checkScreen(); // установить при загрузке
-    window.addEventListener("resize", checkScreen);
-
-    return () => window.removeEventListener("resize", checkScreen);
-    }, []);
-
-    return (
-    <div className="discoverers_container">
-        {isMobile ? (
-        <>
-        <div className="discoverers_mob">
-            <Discoverer discover={belling}/>
-            <Discoverer discover={lazar}/>
-        </div>
-        <Discoverers_content />
-        </>
-        ) : (
-        <>
-        <Discoverer discover={belling}/>
-        <Discoverers_content />
-        <Discoverer discover={lazar}/>
-        </>
-    )}
-    </div>
-)
+    
+  return (
+    <TripleFlexContainer>
+      <Discoverer discover={belling}/>
+      <Discoverers_content />
+      <Discoverer discover={lazar}/>
+    </TripleFlexContainer>
+  )
 }
 
 export default Discovers_container

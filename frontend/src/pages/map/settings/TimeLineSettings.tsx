@@ -33,6 +33,8 @@ const timeLineStyle: SxProps<Theme> = {
     },
     "& .MuiSlider-markLabel": {
       color: "#ffffff",
+      fontFamily: "Montserrat, sans-serif",
+      fontSize: "1vw"
     },
   };
 

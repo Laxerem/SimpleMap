@@ -120,18 +120,11 @@
     background-position: 17vw;
 }
 
-.discoverers_container {
-    @include flex_default(space-between, flex-start);
-    gap: 5%;
-    margin-top: 11vh;
-}
-
 .discover {
     h3 {
         text-align: center;
     }
 }
-
 
 .discover:hover {
     cursor: pointer;
@@ -301,14 +294,6 @@
         --dis_height: calc(20vh + 15vw);
         --dis_width: calc(10vh + 15vw);
         --dis_min-width: 100px;
-    }
-    .discoverers_mob {
-        @include flex_default(space-between, flex-start);
-        box-sizing: border-box;
-        gap: 2%;
-        padding: 0 3%;
-        width: 100%;
-        margin-bottom: 10%;
     }
     .home_navigation {
         width: 70%;

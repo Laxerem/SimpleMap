@@ -1,6 +1,8 @@
+@use '../../../assets/styles/global.scss' as *;
+
 .map {
     margin-top: 15vh;
-    height: 60vh;
+    height: 70vh;
     width: 80%;
     border-radius: 20px;
     z-index: 0;
@@ -18,4 +20,10 @@
     position: relative;
     width: 100%;
     height: 100%;
+}
+
+.ship_image {
+    @extend %default_background_image;
+    height: calc(25vh + 20vw);
+    width: calc(15vh + 20vw);
 }

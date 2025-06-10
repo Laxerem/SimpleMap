@@ -56,25 +56,6 @@ p {
     font-size: var(--text-size);
 }
 
-.green {
-    color: greenyellow;
-}
-
-.image {
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.box_shadow {
-    height: 100%;
-    width: 100%;
-    transition: 1s;
-}
-
-.box_shadow:hover {
-    background-color: rgba(0,0,0,0.5);
-}
-
 %default_background_image {
     background-size: cover;
     background-position: center;
@@ -103,4 +84,23 @@ p {
     font-family: 'Montserrat';
     src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
     font-weight: 300;
+}
+
+.green {
+    color: greenyellow;
+}
+
+.image {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.box_shadow {
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+}
+
+.box_shadow:hover {
+    background-color: rgba(0,0,0,0.5);
 }

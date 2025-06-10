@@ -1,11 +1,11 @@
-const Prehistory = () => {
-  return (
-    <>
-    <div className="prehistory_container">
-      <div className="prehistory_content">
-        <div className="block_text">
-          <h2>Дорога к открытию</h2>
-          <p>
+import React from "react";
+import EndInfoBlock from "../../../components/EndInfoBlock";
+import { EndBlockContent } from "../../../components/EndInfoBlock";
+
+const TextContent: React.FC = () => {
+
+    return (
+        <p>
           До открытия Антарктиды долгое время существовали 
           гипотезы о существовании неизвестного южного континента, 
           который якобы уравновешивал земные массы. 
@@ -22,13 +22,19 @@ const Prehistory = () => {
           подтвердив её существование. 
           Это открытие стало важным этапом в изучении Земли.
           </p>
-        </div>
-        <img className="antarctica_card" src="ship.png"></img>
-      </div>
-    </div>
-    </>
-  )
+    )
 }
 
-export default Prehistory;
+const content: EndBlockContent = {
+    header: "Дорога к открытию",
+    TextContent: TextContent,
+    imageUrl: "/ship.png"
+}
 
+const Prehistory: React.FC = () => {
+    return (
+        <EndInfoBlock content={content}/>
+    )
+}
+
+export default Prehistory

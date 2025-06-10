@@ -1,4 +1,4 @@
-import '../assets/styles/header.css'
+import '../assets/styles/header.scss'
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
