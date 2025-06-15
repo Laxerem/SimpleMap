@@ -104,3 +104,24 @@ p {
 .box_shadow:hover {
     background-color: rgba(0,0,0,0.5);
 }
+
+.pre_loader_screen {
+    position: fixed;
+    @include flex_default();
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    transition: 1s
+}
+
+.pre_loader {
+    @include flex_default();
+    flex-direction: column;
+}
+
+.loading_image {
+    height: auto;
+    width: 20%;
+}
