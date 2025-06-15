@@ -16,7 +16,11 @@ const MapPreview: React.FC = () => {
         <TripleFlexContainer
         style={{marginTop: "20vh", padding: 0}}
         style_mob={{padding: 0}}>
-            <ShipImage imageUrl="/ship_3.png"/>
+            <ShipImage imageUrl="/ship_3.png" motionOptions={{
+                initial: { backgroundPosition: "2000% 0" },
+                animate: { backgroundPosition: "100% 0" },
+                transition: {duration: 2}
+            }}/>
             <div className="block_text" ref={text_container_ref}>
                 <h2>Корабли</h2>
                 <motion.div style={{
@@ -34,7 +38,11 @@ const MapPreview: React.FC = () => {
                 </p>
                 </motion.div>
             </div>
-            <ShipImage imageUrl="/ship_4.png"/>
+            <ShipImage imageUrl="/ship_4.png" motionOptions={{
+                initial: { backgroundPosition: "-3000% 0" },
+                animate: { backgroundPosition: "0% 0" },
+                transition: {duration: 2}
+            }}/>
         </TripleFlexContainer>
     )
 }

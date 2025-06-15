@@ -12,7 +12,7 @@ interface TextLoading {
 
 const text_loading: TextLoading = {
     "/home": {
-        messages: ["Собираемся в экспедицию", "Нанимаем рабочих", "Готовимся к отплытию"]
+        messages: ["Откалываем айсберги", "Размораживаем пингвинов", "Измеряем градус холода"]
     },
     "/map": {
         messages: ['Готовим карты', "Молимся", "Начинаем путь"]
@@ -25,7 +25,7 @@ const PreLoader: React.FC = () => {
 
     const location = useLocation()
     const [isLoading, setIsLoading] = useState<boolean>(true)
-    const [loadingText, setLoadingText] = useState<string>("Грузимся")
+    const [loadingText, setLoadingText] = useState<string>("Собираем припасы")
     const [isLoadingBar, setIsLoadingBar] = useState<boolean>(true)
 
     const [display, setDisplay] = useState<boolean>(true)
@@ -107,18 +107,18 @@ const PreLoader: React.FC = () => {
                 transition={{ type: "spring", damping: 10 }}
               >
                 <motion.img
-  className="loading_image"
-  src="/loading_bar.gif"
-  animate={{
-    y: [0, -10, 0, 10, 0],
-    rotate: [0, 5, 0, -5, 0]
-  }}
-  transition={{
-    duration: 4,
-    repeat: Infinity,
-    ease: "easeInOut"
-  }}
-/>
+                    className="loading_image"
+                    src="/loading_bar.gif"
+                    animate={{
+                        y: [0, -10, 0, 10, 0],
+                        rotate: [0, 5, 0, -5, 0]
+                    }}
+                    transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                />
                 <SlideText text={loadingText} />
               </motion.div>
             )}
