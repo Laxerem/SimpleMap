@@ -119,6 +119,7 @@ p {
 .pre_loader {
     @include flex_default();
     flex-direction: column;
+    gap: 20px;
 }
 
 .loading_image {

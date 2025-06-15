@@ -1,5 +1,8 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, {useEffect, useRef, useState } from "react"
 import { useLocation } from "react-router-dom"
+import { SlideText } from "./SlideText"
+import { AnimatePresence, motion } from "framer-motion"
+
 
 interface TextLoading {
     [url:string]: {
@@ -17,7 +20,8 @@ const text_loading: TextLoading = {
 }
 
 const PreLoader: React.FC = () => {
-    let LOADING_TIME = 3000
+    let LOADING_TIME = 4000
+    let MESSAGE_TIME = 1400
 
     const location = useLocation()
     const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -57,7 +61,7 @@ const PreLoader: React.FC = () => {
             setLoadingText(messages[message_index])
             message_index = next_index(message_index, messages.length)
             console.log("Смена сообщения")
-        }, 700)
+        }, MESSAGE_TIME)
 
         timers.loading = setTimeout(() => {
             setIsLoading(false)
@@ -84,16 +88,43 @@ const PreLoader: React.FC = () => {
     })
 
     return(
-        <div className="pre_loader_screen"
-        style={{
-            display: display ? "flex" : "none",
-            backgroundColor: `rgba(0,0,0,${opacity})`
-        }}>
-            {isLoading ? (<div className="pre_loader">
-                <img className="loading_image" src="/loading_bar.gif"/>
-                <h3>{loadingText}</h3>
-            </div>) : null}
-        </div>
+        <AnimatePresence>
+        {display && (
+          <motion.div
+            className="pre_loader_screen"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            style={{
+              backgroundColor: `rgba(0,0,0,${opacity})`
+            }}
+          >
+            {isLoadingBar && (
+              <motion.div 
+                className="pre_loader"
+                initial={{ scale: 0.8, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                transition={{ type: "spring", damping: 10 }}
+              >
+                <motion.img
+  className="loading_image"
+  src="/loading_bar.gif"
+  animate={{
+    y: [0, -10, 0, 10, 0],
+    rotate: [0, 5, 0, -5, 0]
+  }}
+  transition={{
+    duration: 4,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }}
+/>
+                <SlideText text={loadingText} />
+              </motion.div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     )
 }
 
