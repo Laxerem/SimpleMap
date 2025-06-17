@@ -1,6 +1,14 @@
+import { CSSProperties } from "react"
 import { Stages } from "../pages/map/settings/interface/IWaySettings"
 import AntarcticaStage from "./stages/AntarcticaStage"
 import InitialStage from "./stages/InitialStage"
+
+export const DefaultStageStyle: CSSProperties = {
+    background:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('/blue_gradient.png') center/cover no-repeat`,
+    backgroundSize: "100%",
+    animation: "gradientMove 20s ease-in-out infinite"
+}
 
 export const stages: Stages = {
     0: {
@@ -49,6 +57,12 @@ export const stages: Stages = {
         stage_info: {
             stage_component: AntarcticaStage,
             status: ""
+        },
+        box_style: {
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('/antarctica_stage.jpeg')`,
+            backgroundSize: "cover",
+            animation: "gradientSlowMove 20s ease-in-out infinite"
         }
     },
     8: {

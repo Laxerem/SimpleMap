@@ -1,11 +1,12 @@
 import React, { ReactNode, useEffect, useState } from "react"
 import { Stage, StageData } from "../settings/interface/IWaySettings"
+import {motion} from "framer-motion"
 
 import '../styles/stage.scss'
 import { useWayContext } from "../../../context/way/way_context"
 import way_object from "../way/way_object"
 import StageInfo from "./StageInfo"
-import { stages } from "../../../data/stages"
+import { stages, DefaultStageStyle } from "../../../data/stages"
 import { useMap } from "react-leaflet"
 import { SlideText } from "../../../components/SlideText"
 
@@ -46,18 +47,22 @@ const StageComponent: React.FC = () => {
 
     return(
         <div className="stage_container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <div className="stage_display" 
-            onClick={handleClick}
-            style={
-                width !== null
-                ? { width: `${width}vw` }
-                : {}
-            }
+            <motion.div
+                className="stage_display"
+                key={stage.name}
+                onClick={handleClick}
+                style={{
+                    ...(!stage.box_style ? DefaultStageStyle : stage.box_style),
+                    ...(width !== null ? { width: `${width}vw` } : {})
+                }}
+                initial={{ filter: "brightness(0)" }} // Начальное затемнение
+                animate={{ filter: "brightness(1)" }} // Освещение до нормального
+                transition={{ duration: 1 }}
             >
             <SlideText className="stageText">
                 <p>{stage.name}</p>
             </SlideText>
-            </div>
+            </motion.div>
             { stageInfoWindow && content ? <StageInfo children={content.stage_component as unknown as ReactNode}/> : null }
         </div>
     )

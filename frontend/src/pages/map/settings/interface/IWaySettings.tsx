@@ -1,11 +1,12 @@
 import { LatLngExpression, PolylineOptions } from "leaflet"
-import React, { ReactNode } from "react"
+import React, { CSSProperties, ReactNode } from "react"
 
 interface Stage {
     name: string,
     date: string,
     point_index: number
     stage_info?: StageData
+    box_style?: CSSProperties
 }
 
 interface Stages {
