@@ -27,6 +27,7 @@ html, body {
 
 h1 {
     font-family: 'Bad Script';
+    color: white;
     @extend %default_heading_params;
 }
 

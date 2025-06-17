@@ -1,22 +1,38 @@
 import { PropsWithChildren } from "react"
-import {motion} from "framer-motion"
+import {ForwardRefComponent, MotionProps, motion} from "framer-motion"
 
 interface SlideTextProps {
-    text: string
+    children: React.ReactElement
+    className?: string
 }
 
-export const SlideText: React.FC<PropsWithChildren<SlideTextProps>> = ({text}) => {
+interface IMotionTags {
+    [key:string]: ForwardRefComponent<any, MotionProps>
+}
+
+const tagMap: IMotionTags = {
+    h1: motion.h1,
+    h2: motion.h2,
+    h3: motion.h3,
+    h4: motion.h4,
+    p: motion.p
+}
+
+export const SlideText: React.FC<PropsWithChildren<SlideTextProps>> = ({children, className}) => {
+    const MotionTag = tagMap[String(children.type)]
+    const text = String(children.props.children)
+
     return (
-        <motion.div style={{ display: 'flex', flexWrap: 'wrap', whiteSpace: "pre" }} key={String(text)}>
+        <motion.div className={className} style={{ display: 'flex', flexWrap: 'wrap', whiteSpace: "pre" }} key={String(text)}>
             {text.split('').map((word, i) => (
-                <motion.h3
+                <MotionTag
                 key={i}
                 initial={{ opacity: 0, filter: 'blur(5px)' }}
                 animate={{ opacity: 1, filter: 'blur(0px)' }}
-                transition={{ delay: i * 0.03, duration: 0.8 }}
+                transition={{ delay: i * 0.02, duration: 0.6 }}
               >
                 {word}
-              </motion.h3>
+              </MotionTag>
             ))}
         </motion.div>
     )

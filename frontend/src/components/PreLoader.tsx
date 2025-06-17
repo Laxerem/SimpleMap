@@ -15,13 +15,13 @@ const text_loading: TextLoading = {
         messages: ["Откалываем айсберги", "Размораживаем пингвинов", "Измеряем градус холода"]
     },
     "/map": {
-        messages: ['Готовим карты', "Молимся", "Начинаем путь"]
+        messages: ['Прокладываем курс к Антарктиде...', "Рисуем контуры неизведанной земли..."]
     }
 }
 
 const PreLoader: React.FC = () => {
-    let LOADING_TIME = 4000
-    let MESSAGE_TIME = 1400
+    let LOADING_TIME = 4500
+    let MESSAGE_TIME = 1500
 
     const location = useLocation()
     const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -119,7 +119,9 @@ const PreLoader: React.FC = () => {
                         ease: "easeInOut"
                     }}
                 />
-                <SlideText text={loadingText} />
+                <SlideText>
+                  <h1>{loadingText}</h1>
+                </SlideText>
               </motion.div>
             )}
           </motion.div>
