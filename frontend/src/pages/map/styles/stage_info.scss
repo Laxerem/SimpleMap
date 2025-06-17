@@ -1,6 +1,6 @@
 @use '../../../assets/styles/global.scss' as *;
 
-$ParagraphSize: clamp(7px, 0.6vw + 0.6vh, 1.5vw);
+$ParagraphSize: clamp(10px, 0.6vw + 0.6vh, 1.5vw);
 $FirstHeaderSize: clamp(15px, 1.2vw + 1vh, 2vw);
 $SecondHeaderSize: clamp(12px, 1.1vw + 1vh, 1.8vw);
 
@@ -10,6 +10,8 @@ $SecondHeaderSize: clamp(12px, 1.1vw + 1vh, 1.8vw);
     p {
       font-weight: 600;
       font-size: $ParagraphSize;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
     h1 {
       font-size: $FirstHeaderSize;
@@ -28,4 +30,39 @@ $SecondHeaderSize: clamp(12px, 1.1vw + 1vh, 1.8vw);
         font-family: 'Montserrat', sans-serif;
         font-size: $ParagraphSize;
     }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Bad Script', sans-serif;
+  font-size: calc($ParagraphSize + 0.3vw);
+  font-weight: 500;
+  color: #63C1F1;
+  margin-top: 5%;
+
+  .quote_author {
+    margin-top: 3%;
+    margin-right: 5%;
+    color: whitesmoke;
+    align-self: flex-end;
+    font-size: $ParagraphSize;
+  }
+}
+
+.info_image_container {
+  margin-top: 10px;
+  @extend %default_background_image;
+  position: relative;
+  background-size: 100%;
+  box-sizing: border-box;
+  height: 130px;
+  width: 100%;
+  border-radius: 20px;
+  transition: 0.1s;
+}
+
+.info_image_container:hover {
+  cursor: pointer;
+  background-size: 200%;
 }

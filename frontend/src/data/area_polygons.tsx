@@ -6039,7 +6039,7 @@ export const areaPolygons: StageArea = {
               }
             }
           },
-          stage_id: 5
+          stage_id: 9
         },
         "Лиссабон": {
           dynamic_area: {
@@ -9907,6 +9907,6 @@ export const areaPolygons: StageArea = {
               }
           },
         },
-        stage_id: 1
+        stage_id: 8
       }
 }

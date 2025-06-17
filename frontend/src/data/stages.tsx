@@ -1,10 +1,16 @@
 import { Stages } from "../pages/map/settings/interface/IWaySettings"
+import AntarcticaStage from "./stages/AntarcticaStage"
+import InitialStage from "./stages/InitialStage"
 
 export const stages: Stages = {
     0: {
         name: "Начало экспедиции",
         date: "1000",
-        point_index: 0
+        point_index: 0,
+        stage_info: {
+            stage_component: InitialStage,
+            status: "В порту"
+        }
     },
     1: {
         name: "Путь в Данию",
@@ -37,8 +43,22 @@ export const stages: Stages = {
         point_index: 365
     },
     7: {
-        name: "Остановка в Южной Георгии",
+        name: "Открытие Антарктиды",
         date: "2000",
-        point_index: 413
+        point_index: 530,
+        stage_info: {
+            stage_component: AntarcticaStage,
+            status: ""
+        }
+    },
+    8: {
+        name: "Остановка в Сидней",
+        date: "2000",
+        point_index: 675
+    },
+    9: {
+        name: "Остановка на острове Тенарифе",
+        date: "2000",
+        point_index: 271
     }
 }
