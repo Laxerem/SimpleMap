@@ -26,5 +26,12 @@ export const timeLineMarks: ITimeLineMark[] = [
             value: 520
         },
         stage_id: 5
+    },
+    {
+        mark: {
+            label: "Конец экспедиции",
+            value: 1000
+        },
+        stage_id: 20
     }
 ]

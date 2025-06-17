@@ -1,16 +1,18 @@
 import { PropsWithChildren, useState, useEffect } from "react"
 
 interface ImageContainer {
-    imageUrl: string
+    imageUrl: string,
+    cursor_animation?: boolean
+    border_radius?: number
 }
 
-const InfoImageContainer: React.FC<PropsWithChildren<ImageContainer>> = ({imageUrl}) => {
+const InfoImageContainer: React.FC<PropsWithChildren<ImageContainer>> = ({imageUrl, cursor_animation, border_radius}) => {
     const [cursorPosition, setCursorPosition] = useState<[number, number]>([0,0])
     const [isHover, setIsHover] = useState<boolean>(false)
     const [backgroundPos, setBackgroundPos] = useState<string>("")
 
     useEffect(() => {
-        if (isHover) {
+        if (isHover && cursor_animation) {
             const pos = [cursorPosition[0], cursorPosition[1] + 160]
             setBackgroundPos(`-${pos[0]}px -${pos[1]}px`)
         }
@@ -23,7 +25,8 @@ const InfoImageContainer: React.FC<PropsWithChildren<ImageContainer>> = ({imageU
         <div className="info_image_container" 
         style={{
             backgroundImage: `url(${imageUrl})`,
-            backgroundPosition: backgroundPos
+            backgroundPosition: backgroundPos,
+            borderRadius: `${border_radius}px`
         }}
         onMouseMove={(pos) => {
             const rect = pos.currentTarget.getBoundingClientRect();

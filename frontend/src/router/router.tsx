@@ -6,7 +6,7 @@ import PreLoader from '../components/PreLoader'
 
 function Router() {
     return <BrowserRouter>
-
+    
     <Header/>
         <Routes>
             <Route element={<Home />} path='/home' />
