@@ -17,7 +17,9 @@ export const stages: Stages = {
         point_index: 0,
         stage_info: {
             stage_component: InitialStage,
-            status: "В порту"
+            status: {
+                location: "Кронштадт"
+            }
         }
     },
     1: {
@@ -56,7 +58,9 @@ export const stages: Stages = {
         point_index: 530,
         stage_info: {
             stage_component: AntarcticaStage,
-            status: ""
+            status: {
+                location: "Антарктида"
+            }
         },
         box_style: {
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),

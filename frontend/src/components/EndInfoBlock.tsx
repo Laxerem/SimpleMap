@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from "react";
+import Waves from "./Waves";
 
 export interface EndBlockContent {
   header: string,
@@ -22,6 +23,7 @@ const EndInfoBlock: React.FC<PropsWithChildren<EndBlockContentProps>> = ({conten
         </div>
         <img className="antarctica_card" src={content.imageUrl}></img>
       </div>
+      <Waves/>
     </div>
     </>
   )

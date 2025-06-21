@@ -1,7 +1,12 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import '../styles/stage_info.scss'
+import { MissionStats, StatusCard } from "./MissionStats";
 
-const StageInfo: React.FC<PropsWithChildren> = ({ children }) => {
+interface StageInfoProps {
+    mission_stats?: MissionStats
+}
+
+const StageInfo: React.FC<PropsWithChildren<StageInfoProps>> = ({ children, mission_stats }) => {
     const [minWidth, setMinWidth] = useState<number>(0)
     const [width, setWidth] = useState<number>(0);
     const [opacity, setOpacity] = useState<number>(0);
@@ -36,6 +41,7 @@ const StageInfo: React.FC<PropsWithChildren> = ({ children }) => {
         >
         <div style={{ opacity: `${opacity}`, transition: "1s" }}>
             {content}
+            {mission_stats ? <StatusCard summary={mission_stats}/> : null}
         </div>
         </div>
     );

@@ -1,15 +1,20 @@
 import React from "react";
+import InfoImageContainer from "../../components/InfoImageContainer";
 
 const InitialStage: React.FC = () => {
 
     return(
         <div className="stage_info_text">
             <h1>Начало великой экспедиции:</h1>
+            <InfoImageContainer imageUrl="/Kronstadt.gif" border_radius="20px"/>
+            <br></br>
             <p>
                 <b>4 июля 1819 г.</b> — торжественный выход шлюпов <b>"Восток" </b> 
                 (380 тонн, капитан Ф.Ф. Беллинсгаузен) и <b>"Мирный" </b>  
                 (530 тонн, капитан М.П. Лазарев) из <span className="green">Кронштадтской гавани</span>.
             </p>
+
+            <p>Экипаж насчитывал 190 человек.</p>
 
             <h2>Основные научные и географические цели:</h2>
             <ul>

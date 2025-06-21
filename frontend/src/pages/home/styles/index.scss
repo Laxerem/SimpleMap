@@ -230,16 +230,11 @@
 
 .prehistory_content {
     @include flex_default($align: flex-start);
-    padding: 10% 2% 10% 2%;
-    margin-bottom: 8%;
+    background-color: #07131F;
+    padding: 10% 2% 5% 2%;
     gap:5%;
     margin-top: 5%;
     border-radius: 50% 50% 0 0;
-    background-color: #07131F;
-    @extend %default_background_image;
-    background-image: url(../../../public/waves.svg);
-    background-position: bottom;
-    background-size: 100%
 }
 
 .home_footer {
@@ -251,6 +246,7 @@
     line-height: 110%;
     letter-spacing: 1vw;
     font-size: 7vw;
+    margin-top: 10%;
     padding: 2% 0;
 }
 

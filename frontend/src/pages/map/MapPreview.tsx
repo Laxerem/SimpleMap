@@ -8,19 +8,34 @@ const MapPreview: React.FC = () => {
     const {scrollYProgress} = useScroll({
         container: text_container_ref
     })
-
     const rotateX = useTransform(scrollYProgress, [0, 1], [0, 15]);
     const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.7, 1]);
 
+    
+
     return (
         <TripleFlexContainer
-        style={{marginTop: "20vh", padding: 0}}
+        style={{
+            marginTop: "20vh", 
+            padding: 0, 
+            backgroundImage: "url(/waves2.svg)", 
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "bottom",
+            backgroundSize: "100%",
+            transition: '1s'
+        }}
         style_mob={{padding: 0}}>
-            <ShipImage imageUrl="/ship_3.png" motionOptions={{
+            <ShipImage imageUrl="/ship_3.png" 
+            motionOptions={{
                 initial: { backgroundPosition: "2000% 0" },
                 animate: { backgroundPosition: "100% 0" },
                 transition: {duration: 2}
-            }}/>
+            }}
+            hoverStyle={{
+                cursor: 'pointer',
+            }}
+            handleClick={() => console.log("olo")}
+            />
             <div className="block_text" ref={text_container_ref}>
                 <h2>Корабли</h2>
                 <motion.div style={{
@@ -38,11 +53,16 @@ const MapPreview: React.FC = () => {
                 </p>
                 </motion.div>
             </div>
-            <ShipImage imageUrl="/ship_4.png" motionOptions={{
+            <ShipImage imageUrl="/ship_4.png" 
+            motionOptions={{
                 initial: { backgroundPosition: "-3000% 0" },
                 animate: { backgroundPosition: "0% 0" },
                 transition: {duration: 2}
-            }}/>
+            }}
+            hoverStyle={{
+                cursor: 'pointer',
+            }}
+            />
         </TripleFlexContainer>
     )
 }

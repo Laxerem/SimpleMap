@@ -1,5 +1,6 @@
 import { LatLngExpression, PolylineOptions } from "leaflet"
 import React, { CSSProperties, ReactNode } from "react"
+import { MissionStats } from "../../overlay/MissionStats"
 
 interface Stage {
     name: string,
@@ -15,7 +16,7 @@ interface Stages {
 
 interface StageData {
     stage_component: React.FC | ReactNode,
-    status: string
+    status: MissionStats
 }
 
 interface StagesData {
