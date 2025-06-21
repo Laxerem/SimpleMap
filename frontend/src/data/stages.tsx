@@ -78,5 +78,10 @@ export const stages: Stages = {
         name: "Остановка на острове Тенарифе",
         date: "2000",
         point_index: 271
+    },
+    10: {
+        name: "Лиссабон",
+        date: "2000",
+        point_index: 1228
     }
 }

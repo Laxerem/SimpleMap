@@ -7120,7 +7120,7 @@ export const areaPolygons: StageArea = {
               }
             }
           },
-          stage_id: 3
+          stage_id: 10
         },
         "Рио-Де-Жанейро": {
           dynamic_area: {
