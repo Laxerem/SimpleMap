@@ -42,6 +42,18 @@ $stage_font_size: clamp(14px, 1.2vw, 100px);
   }
 }
 
+@keyframes gradientMoveCenterBottom {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
 .stage_display:hover {
     cursor: pointer;
 }

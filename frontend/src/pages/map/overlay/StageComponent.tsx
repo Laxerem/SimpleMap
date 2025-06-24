@@ -46,25 +46,37 @@ const StageComponent: React.FC = () => {
     }, [isHovered])
 
     return(
-        <div className="stage_container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <motion.div
-                className="stage_display"
-                key={stage.name}
-                onClick={handleClick}
-                style={{
-                    ...(!stage.box_style ? DefaultStageStyle : stage.box_style),
-                    ...(width !== null ? { width: `${width}vw` } : {})
-                }}
-                initial={{ filter: "brightness(0)" }} // Начальное затемнение
-                animate={{ filter: "brightness(1)" }} // Освещение до нормального
-                transition={{ duration: 1 }}
-            >
-            <SlideText className="stageText">
-                <p>{stage.name}</p>
-            </SlideText>
-            </motion.div>
-            { stageInfoWindow && content ? <StageInfo children={content.stage_component as unknown as ReactNode}/> : null }
-        </div>
+        <>
+            <style>
+                {`
+                    .stageText {
+                        p {
+                            transition: 1s;
+                            font-size: ${width ? null : 0.9}vw;
+                        } 
+                    }
+                `}
+            </style>
+            <div className="stage_container" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                <motion.div
+                    className="stage_display"
+                    key={stage.name}
+                    onClick={handleClick}
+                    style={{
+                        ...(!stage.box_style ? DefaultStageStyle : stage.box_style),
+                        ...(width !== null ? { width: `${width}vw` } : {})
+                    }}
+                    initial={{ filter: "brightness(0)" }} // Начальное затемнение
+                    animate={{ filter: "brightness(1)" }} // Освещение до нормального
+                    transition={{ duration: 1 }}
+                >
+                <SlideText className="stageText">
+                    <p>{stage.name}</p>
+                </SlideText>
+                </motion.div>
+                { stageInfoWindow && content ? <StageInfo children={content.stage_component as unknown as ReactNode}/> : null }
+            </div>
+        </>
     )
 }
 

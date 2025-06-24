@@ -4,7 +4,6 @@ import { MissionStats } from "../../overlay/MissionStats"
 
 interface Stage {
     name: string,
-    date: string,
     point_index: number
     stage_info?: StageData
     box_style?: CSSProperties
