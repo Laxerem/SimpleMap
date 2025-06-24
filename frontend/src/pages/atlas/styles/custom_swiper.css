@@ -1,0 +1,37 @@
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #0e1e2b, #04121c);
+    border: 2px solid #7cd6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+  }
+  
+  /* Вот тут фиксируем стрелки ВНУТРИ контейнера */
+  .custom-swiper-button-prev {
+    left: 16px;
+  }
+  
+  .custom-swiper-button-next {
+    right: 16px;
+  }
+  
+  .arrow {
+    color: #c0ecf8;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+  }
+  
+  .arrow.rotate {
+    transform: rotate(180deg);
+  }
+  

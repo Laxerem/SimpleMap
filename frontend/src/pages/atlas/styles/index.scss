@@ -1,0 +1,17 @@
+.atlas_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+    width: 100%;
+}
+
+.atlas_swiper {
+    height: 80vh;
+    width: 70%;
+}
+
+.atlas_image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+}
