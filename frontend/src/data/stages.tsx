@@ -13,48 +13,58 @@ export const DefaultStageStyle: CSSProperties = {
 export const stages: Stages = {
     0: {
         name: "Начало экспедиции",
-        date: "1000",
         point_index: 0,
         stage_info: {
             stage_component: InitialStage,
             status: {
                 location: "Кронштадт"
             }
+        },
+        box_style: {
+            background:`linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url('/Kronshtat_ship.png') center/cover no-repeat`,
+            backgroundSize: "100%",
+            animation: "gradientMoveCenterBottom 20s ease-in-out infinite"
         }
     },
     1: {
         name: "Путь в Данию",
-        date: "1869",
         point_index: 75
     },
     2: {
         name: "Заход в Копенгаген",
-        date: "1869",
         point_index: 100
     },
     3: {
         name: "Путь в Англию",
-        date: "2000",
-        point_index: 185
+        point_index: 170
     },
     4: {
         name: "Заход в Портсмут",
-        date: "2000",
         point_index: 210
     },
     5: {
-        name: "Путь в Рио-Де-Жанейро",
-        date: "2000",
-        point_index: 360
+        name: "Путь в Санта Крус",
+        point_index: 264
     },
     6: {
-        name: "Остановка в Рио-Де-Жанейро",
-        date: "2000",
-        point_index: 365
+        name: "Санта Крус",
+        point_index: 272
     },
     7: {
+        name: "Путь в Рио",
+        point_index: 340
+    },
+    8: {
+        name: "Остановка в Рио",
+        point_index: 365
+    },
+    9: {
+        name: "Путь к Антарктиде",
+        point_index: 490
+    },
+    10: {
         name: "Открытие Антарктиды",
-        date: "2000",
         point_index: 530,
         stage_info: {
             stage_component: AntarcticaStage,
@@ -69,19 +79,12 @@ export const stages: Stages = {
             animation: "gradientSlowMove 20s ease-in-out infinite"
         }
     },
-    8: {
+    12: {
         name: "Остановка в Сидней",
-        date: "2000",
         point_index: 675
     },
-    9: {
-        name: "Остановка на острове Тенарифе",
-        date: "2000",
-        point_index: 271
-    },
-    10: {
+    16: {
         name: "Лиссабон",
-        date: "2000",
         point_index: 1228
     }
 }
