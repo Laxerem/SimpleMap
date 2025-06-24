@@ -2,19 +2,36 @@ import React, { PropsWithChildren, ReactNode } from "react"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // основные стили
 import 'swiper/css/navigation'; // если нужен navigation
-import { Navigation } from 'swiper/modules';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
 
 interface AtlasContainerProps {
     images: string[]
 }
 
 const AtlasContainer: React.FC<PropsWithChildren<AtlasContainerProps>> = ({images}) => {
+    const params = {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        },
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }
 
     return (
         <div className="atlas_container">
             <div className="atlas_swiper">
                 <Swiper
-                modules={[Navigation]}
+                {...params}
+                modules={[Navigation, EffectCoverflow]}
                 navigation
                 spaceBetween={50}
                 slidesPerView={1}
