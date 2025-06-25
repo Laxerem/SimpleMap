@@ -2,6 +2,10 @@ import { CSSProperties } from "react"
 import { Stages } from "../pages/map/settings/interface/IWaySettings"
 import AntarcticaStage from "./stages/AntarcticaStage"
 import InitialStage from "./stages/InitialStage"
+import KopengagenStage from "./stages/KopengagenStage"
+import PortsmouthStage from "./stages/PortsmouthStage"
+import SantacrusStage from "./stages/SantacrusStage"
+import WaySantacrus from "./stages/WaySantacrus"
 
 export const DefaultStageStyle: CSSProperties = {
     background:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -21,38 +25,42 @@ export const stages: Stages = {
             }
         },
         box_style: {
-            background:`linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+            background:`linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
                 url('/Kronshtat_ship.png') center/cover no-repeat`,
             backgroundSize: "100%",
             animation: "gradientMoveCenterBottom 20s ease-in-out infinite"
         }
     },
-    1: {
-        name: "Путь в Данию",
-        point_index: 75
-    },
     2: {
         name: "Заход в Копенгаген",
-        point_index: 100
-    },
-    3: {
-        name: "Путь в Англию",
-        point_index: 170
+        point_index: 100,
+        stage_info: {
+            stage_component: KopengagenStage
+        }
     },
     4: {
-        name: "Заход в Портсмут",
-        point_index: 210
+        name: "Остановка в Великобритании",
+        point_index: 210,
+        stage_info: {
+            stage_component: PortsmouthStage 
+        }
     },
     5: {
-        name: "Путь в Санта Крус",
-        point_index: 264
+        name: "Путь к Тенерифе",
+        point_index: 264,
+        stage_info: {
+            stage_component: WaySantacrus
+        }
     },
     6: {
-        name: "Санта Крус",
-        point_index: 272
+        name: "Остров Тенерифе",
+        point_index: 272,
+        stage_info: {
+            stage_component: SantacrusStage
+        }
     },
     7: {
-        name: "Путь в Рио",
+        name: "Проход через Атлантику",
         point_index: 340
     },
     8: {
@@ -60,8 +68,8 @@ export const stages: Stages = {
         point_index: 365
     },
     9: {
-        name: "Путь к Антарктиде",
-        point_index: 490
+        name: "Движение на Юг",
+        point_index: 485
     },
     10: {
         name: "Открытие Антарктиды",

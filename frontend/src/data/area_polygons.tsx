@@ -7044,7 +7044,11 @@ export const areaPolygons: StageArea = {
               }
             }
           },
-          stage_id: 8
+          stage_id: 8,
+          style: {
+            color: "yellow",
+            weight: 1
+          }
         },
         "Антарктида": {
           dynamic_area: {
@@ -7925,7 +7929,11 @@ export const areaPolygons: StageArea = {
               }
             }
           },
-          stage_id: 10
+          stage_id: 10,
+          style: {
+            color: "#31AFE1",
+            weight: 2
+          }
         },
         "Сидней": {
           dynamic_area: {
