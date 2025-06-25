@@ -4,10 +4,9 @@ import { useMapContext } from "../../../context/map/map_context";
 import '../styles/ship.scss'
 
 const ShipSettings: React.FC = () => {
-    const {coords, setCoords} = useWayContext()
-    const {viewContext, setViewContext} = useMapContext()
+    const {coords} = useWayContext()
+    const {setViewContext} = useMapContext()
     const [isClicked, setIsClicked] = useState<boolean>(false);
-    const [width, setWidth] = useState<number | null>(null);
 
     const handleClick = () => {
         setIsClicked(!isClicked)
@@ -23,9 +22,12 @@ const ShipSettings: React.FC = () => {
         <div className="ship_settings_container" 
         onClick={handleClick}
         style={
-            width !== null
-                ? { width: `${width}vw` }
-                : {}
+            isClicked ? {
+                transform: "scaleX(-1)",
+                borderRadius: "0px 0px 20px 0px",
+                backgroundImage: "url(/compass.png)",
+                backgroundColor: "rgba(255,255,255, 0.8)"
+            } : {}
         }>
 
         </div>
