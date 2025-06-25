@@ -1,0 +1,51 @@
+.science_value_parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin-top: 5%;
+    gap: 2vh;
+} 
+
+.science_value {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 60%;
+    min-width: 300px;
+    padding: 20px 10px 20px 30px;
+    border-radius: 20px;
+    border: 2px solid #63C1F1;
+    background-color: #07131F;
+}
+
+.science_value_container {
+    display: flex;
+    width: 100%;
+}
+
+.science_name {
+    width: 90%;
+    text-align: center;
+}
+
+.value_button {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    background: url('/Up.svg') no-repeat center bottom, rgb(255, 255, 255);
+    background-size: 60%;
+}
+
+.flipped {
+    transform: scaleX(-1);
+}
+
+.science_value_list {
+    margin-top: 20px;
+    li {
+        margin-bottom: 5%;
+        font-family: 'Montserrat';
+        color: white;
+    }
+}

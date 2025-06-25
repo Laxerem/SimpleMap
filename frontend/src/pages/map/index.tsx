@@ -2,6 +2,8 @@ import MapComponent from './MapComponent'
 import MapContextProvider from '../../context/map/provider'
 import ResultsExpedition from './results'
 import MapPreview from './MapPreview'
+import DiscoverValue from './DiscoverValue'
+import './styles/index.scss'
 
 const MapPage = () => {
     return (
@@ -12,6 +14,7 @@ const MapPage = () => {
                 <MapComponent />
             </MapContextProvider>
         </div>
+        <DiscoverValue />
         <ResultsExpedition />
         </>
     )
