@@ -15,7 +15,7 @@ interface Stages {
 
 interface StageData {
     stage_component: React.FC | ReactNode,
-    status: MissionStats
+    status?: MissionStats
 }
 
 interface StagesData {

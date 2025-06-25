@@ -52,7 +52,7 @@ const StageComponent: React.FC = () => {
                     .stageText {
                         p {
                             transition: 1s;
-                            font-size: ${width ? null : 0.9}vw;
+                            font-size: ${width ? null : 15}px;
                         } 
                     }
                 `}

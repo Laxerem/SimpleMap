@@ -1,6 +1,7 @@
 @use '../../../assets/styles/global.scss' as *;
 
 $settings_height: clamp(9vh, 5vw, 13vh);
+$settings_width: clamp(9vh, 5vw, 13vh);
 
 .ship_settings_container {
     @include flex_default(flex-end);
@@ -8,18 +9,18 @@ $settings_height: clamp(9vh, 5vw, 13vh);
     z-index: 1000;
     right: 0px;
     height: $settings_height;
-    width: 6%;
-    background-color: rgba(10, 33, 49, 0.7);
+    width: $settings_width;
+    background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(20px);
-    border-radius: 0px 0px 20px 0px;
-    background-size: cover;
+    border-radius: 0px 0px 0px 20px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(/settings_ship.png);
-    transform: scaleX(-1);
-    transition: 1s;
+    background-image: url(/compass-2.png);
+    transition: 0.5s;
 }
 
 .ship_settings_container:hover {
     cursor: pointer;
+    background-size: 80%;
 }

@@ -91,6 +91,14 @@ p {
     color: greenyellow;
 }
 
+.red {
+    color: rgb(252, 101, 101);
+}
+
+.yellow {
+    color: yellow;
+}
+
 .image {
     background-repeat: no-repeat;
     background-position: center;
@@ -126,4 +134,20 @@ p {
 .loading_image {
     height: auto;
     width: 20%;
+}
+
+.tooltip {
+    animation: blink 2s infinite;
+    cursor: help;
+      
+    @keyframes blink {
+        0%, 100% { 
+            color: #63C1F1; 
+            opacity: 1;
+        }
+        50% { 
+            color: #00aaff;
+            opacity: 0.9;
+        }
+    }
 }
