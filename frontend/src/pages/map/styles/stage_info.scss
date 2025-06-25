@@ -1,8 +1,9 @@
 @use '../../../assets/styles/global.scss' as *;
 
-$ParagraphSize: clamp(10px, 0.6vw + 0.6vh, 1.5vw);
+$ParagraphSize: clamp(10px, 0.6vw + 0.7vh, 1.5vw);
 $FirstHeaderSize: clamp(15px, 1.3vw + 1vh, 2vw);
-$SecondHeaderSize: clamp(12px, 1.1vw + 1.1vh, 1.8vw);
+$SecondHeaderSize: clamp(12px, 1.1vw + 1.2vh, 1.9vw);
+$ThirdHeaderSize: clamp(8px, 0.75vw + 0.7vh, 1.5vw);
 
 .stage_info_text {
     padding: 5%;
@@ -21,11 +22,18 @@ $SecondHeaderSize: clamp(12px, 1.1vw + 1.1vh, 1.8vw);
     h2 {
         text-align: left;
         margin-top: 7%;
-        margin-bottom: 2%;
+        margin-bottom: 8%;
         font-size: $SecondHeaderSize;
+    }
+    h3 {
+      font-family: "Montserrat";
+      font-size: $ThirdHeaderSize;
+      font-weight: 1000;
+      margin-bottom: 5%;
     }
     ul, ol {
         margin-top: 5%;
+        margin-bottom: 5%;
         margin-left: 10%;
     }
 

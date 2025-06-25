@@ -5,9 +5,10 @@ import Tippy from "@tippyjs/react";
 interface TextToolTipProps {
   children: string;
   content: string;
+  image?: string;
 }
 
-export const TextToolTip: React.FC<PropsWithChildren<TextToolTipProps>> = ({children,content,}) => {
+export const TextToolTip: React.FC<PropsWithChildren<TextToolTipProps>> = ({children,content,image}) => {
     const [id, setId] = useState<number>(0)
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
@@ -33,18 +34,24 @@ export const TextToolTip: React.FC<PropsWithChildren<TextToolTipProps>> = ({chil
                 duration: 5,
             }}
             style={{
-                background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                 url('/blue_gradient.png') center/cover no-repeat`,
-                backgroundSize: "100%",
+                backgroundSize: "cover",
                 color: "white",
                 fontFamily: "Montserrat",
                 fontSize: "1vw",
                 padding: "10px",
                 borderRadius: "10px",
                 maxWidth: "300px",
+                animation: "gradientMove 20s ease-in-out infinite"
             }}
             >
-            {content}
+                {image ? 
+                <img style={{marginBottom: "10px"}} 
+                src={image} width="100%" height="100%"></img> 
+                : null}
+
+                {content}
             </motion.div>
         }
         >

@@ -24,7 +24,6 @@ const Ship: React.FC<PropsWithChildren<ShipProps>> = ({coords, icon, name}) => {
 
     const ship_icon = icon || defaultIcon
 
-
     return(
         <>
             { coords ?

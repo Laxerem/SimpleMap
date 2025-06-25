@@ -1,5 +1,6 @@
 import React from "react";
 import InfoImageContainer from "../../components/InfoImageContainer";
+import { TextToolTip } from "../../components/TextToolTip";
 
 const SantacrusStage: React.FC = () => {
 
@@ -17,7 +18,8 @@ const SantacrusStage: React.FC = () => {
             <p>
                 Визит в <b>Санта-Крус</b> был технической остановкой для подготовки к длительному 
                 переходу через <b>Атлантику</b>.
-                <br></br> 
+                <br></br>
+                <br></br>
                 Никаких научных исследований или значимых событий в источниках не отмечено.
             </p>
             <h2>Деятельность</h2>
@@ -47,7 +49,7 @@ const SantacrusStage: React.FC = () => {
                     получил повреждения, но <b>Лазарев</b> смог его отремонтировать в море.
                 </li>
                 <li>
-                    <b>Восхождение на вулкан Тейде:</b>
+                    <b>Восхождение на <TextToolTip image="/Taide.png" content="Те́йде (исп. Teide) — вулкан на острове Тенерифе, муниципалитет Ла-Оротава, самая высокая точка Испании, центр Национального парка Тейде.">вулкан Тейде:</TextToolTip></b>
                     <br></br> 
                     Несколько офицеров (включая астронома экспедиции 
                     <b> Ивана Симонова</b>) поднялись на вершину вулкана, 

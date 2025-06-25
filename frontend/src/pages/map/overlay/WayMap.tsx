@@ -52,7 +52,7 @@ const WayMap: React.FC<PropsWithChildren<WayMapProps>> = ({ way }) => {
           }}
         />
       )}
-      <Ship coords={coords} icon={WayShipIcon} name="Кораблик" />
+      <Ship coords={coords} icon={WayShipIcon} name="Восток и Мирный" />
     </>
   );
 };

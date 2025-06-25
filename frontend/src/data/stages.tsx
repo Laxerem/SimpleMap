@@ -6,6 +6,15 @@ import KopengagenStage from "./stages/KopengagenStage"
 import PortsmouthStage from "./stages/PortsmouthStage"
 import SantacrusStage from "./stages/SantacrusStage"
 import WaySantacrus from "./stages/WaySantacrus"
+import AtlanticaStage from "./stages/AtlanticaStage"
+import RioStage from "./stages/RioStage"
+import WayAntarctica from "./stages/WayAntarctica"
+import SidneyStage from "./stages/SidneyStage"
+import WayAustralia from "./stages/WayAustralia"
+import WayAfterSidney from "./stages/WayAfterSidney"
+import SidneyBack from "./stages/SidneyBack"
+import NewIslandsStage from "./stages/NewIslandsStage"
+import ByeSidney from "./stages/ByeSidney"
 
 export const DefaultStageStyle: CSSProperties = {
     background:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -61,15 +70,34 @@ export const stages: Stages = {
     },
     7: {
         name: "Проход через Атлантику",
-        point_index: 340
+        point_index: 330,
+        stage_info: {
+            stage_component: AtlanticaStage
+        },
+        box_style: {
+            background: `
+                url('/sea.gif') center/cover no-repeat`
+        }
     },
     8: {
         name: "Остановка в Рио",
-        point_index: 365
+        point_index: 365,
+        stage_info: {
+            stage_component: RioStage
+        }
     },
     9: {
-        name: "Движение на Юг",
-        point_index: 485
+        name: "Плавание к Южному Полюсу",
+        point_index: 485,
+        stage_info: {
+            stage_component: WayAntarctica
+        },
+        box_style: {
+            background: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+            url('/southern_ocean.png') center/cover no-repeat`,
+            backgroundSize: "100%",
+            animation: "gradientMoveCenterBottom 40s ease-in-out infinite"
+        }
     },
     10: {
         name: "Открытие Антарктиды",
@@ -87,11 +115,61 @@ export const stages: Stages = {
             animation: "gradientSlowMove 20s ease-in-out infinite"
         }
     },
+    11: {
+        name: "Путь к Австралии",
+        point_index: 635,
+        stage_info: {
+            stage_component: WayAustralia
+        },
+        box_style: {
+            background: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+            url('/southern_ocean.png') center/cover no-repeat`,
+            backgroundSize: "100%",
+            animation: "gradientMoveCenterBottom 40s ease-in-out infinite"
+        }
+    },
     12: {
         name: "Остановка в Сидней",
-        point_index: 675
+        point_index: 675,
+        stage_info: {
+            stage_component: SidneyStage
+        }
+    },
+    13: {
+        name: "Исследование Океании",
+        point_index: 888,
+        stage_info: {
+            stage_component: WayAfterSidney
+        },
+        box_style: {
+            background: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+            url('/ocean.png') center/cover no-repeat`,
+            backgroundSize: "100%",
+            animation: "gradientMoveCenterBottom 40s ease-in-out infinite"
+        }
+    },
+    14: {
+        name: "Возвращение в Сидней",
+        point_index: 930,
+        stage_info: {
+            stage_component: SidneyBack
+        }
+    },
+    15: {
+        name: "Отплытие из Сиднея",
+        point_index: 970,
+        stage_info: {
+            stage_component: ByeSidney
+        }
     },
     16: {
+        name: "Открытие новых Островов",
+        point_index: 1060,
+        stage_info: {
+            stage_component: NewIslandsStage
+        }
+    },
+    17: {
         name: "Лиссабон",
         point_index: 1228
     }

@@ -137,17 +137,15 @@ p {
 }
 
 .tooltip {
-    animation: blink 2s infinite;
+    animation: blink 3s infinite;
     cursor: help;
       
     @keyframes blink {
         0%, 100% { 
-            color: #63C1F1; 
-            opacity: 1;
+            color: #ffffff; 
         }
         50% { 
-            color: #00aaff;
-            opacity: 0.9;
+            color: #26ff00;
         }
     }
 }

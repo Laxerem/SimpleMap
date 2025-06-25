@@ -1,5 +1,6 @@
 import React from "react";
 import InfoImageContainer from "../../components/InfoImageContainer";
+import { TextToolTip } from "../../components/TextToolTip";
 
 const InitialStage: React.FC = () => {
 
@@ -25,7 +26,7 @@ const InitialStage: React.FC = () => {
 
             <p>
                 Это было частью усилий России исследовать южные полярные регионы, 
-                где ранее <b>Джеймс Кук</b> не смог подтвердить существование <b>Антарктиды</b>.
+                где ранее <TextToolTip image="/JamesCook.png" content="Джеймс Кук - английский мореплаватель, трижды обогнувший Землю, первый антарктический мореход, первооткрыватель восточного побережья Австралии, Новой Зеландии">Джеймс Кук</TextToolTip> не смог подтвердить существование <b>Антарктиды</b>.
             </p>
 
             <p>
