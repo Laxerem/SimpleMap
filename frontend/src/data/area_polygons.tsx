@@ -9915,7 +9915,7 @@ export const areaPolygons: StageArea = {
               }
             }
           },
-          stage_id: 16
+          stage_id: 19
         },
       
 }

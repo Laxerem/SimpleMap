@@ -15,6 +15,11 @@ import WayAfterSidney from "./stages/WayAfterSidney"
 import SidneyBack from "./stages/SidneyBack"
 import NewIslandsStage from "./stages/NewIslandsStage"
 import ByeSidney from "./stages/ByeSidney"
+import RioBack from "./stages/RioBack"
+import BackAtlantica from "./stages/BackAtlantica"
+import LisabonStage from "./stages/LisabonStage"
+import KronshtadtBack from "./stages/KronshtadtBack"
+import ExpeditionEnd from "./stages/ExpeditionEnd"
 
 export const DefaultStageStyle: CSSProperties = {
     background:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -170,7 +175,42 @@ export const stages: Stages = {
         }
     },
     17: {
+        name: "Заход в Рио-де-Жанейро",
+        point_index: 1135,
+        stage_info: {
+            stage_component: RioBack
+        }
+    },
+    18: {
+        name: "Переход через Атлантику",
+        point_index: 1210,
+        stage_info: {
+            stage_component: BackAtlantica 
+        },
+        box_style: {
+            background: `
+                url('/sea.gif') center/cover no-repeat`
+        }
+    },
+    19: {
         name: "Лиссабон",
-        point_index: 1228
+        point_index: 1228,
+        stage_info: {
+            stage_component: LisabonStage
+        }
+    },
+    20: {
+        name: "Возвращение в Кронштадт",
+        point_index: 1390,
+        stage_info: {
+            stage_component: KronshtadtBack
+        }
+    },
+    21: {
+        name: "Окончание экспедиции",
+        point_index: 1391,
+        stage_info: {
+            stage_component: ExpeditionEnd
+        }
     }
 }

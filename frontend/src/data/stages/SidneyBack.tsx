@@ -1,4 +1,5 @@
 import React from "react"
+import InfoImageContainer from "../../components/InfoImageContainer"
 
 const SidneyBack: React.FC = () => {
 
@@ -8,6 +9,7 @@ const SidneyBack: React.FC = () => {
             <p>
                 Экспедиция <b>Беллинсгаузена</b> и <b>Лазарева</b> вернулась в Сидней <b>10 сентября 1820 года</b>
             </p>
+            <InfoImageContainer border_radius="20px" imageUrl="/sidney-2.png"/>
             <p>
                 Возвращение в <b>Сидней</b> стало важным этапом подготовки к антарктическим 
                 исследованиям — здесь удалось провести необходимый ремонт кораблей, 
