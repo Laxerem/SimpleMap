@@ -93,7 +93,7 @@ export const stages: Stages = {
     },
     9: {
         name: "Плавание к Южному Полюсу",
-        point_index: 485,
+        point_index: 475,
         stage_info: {
             stage_component: WayAntarctica
         },
