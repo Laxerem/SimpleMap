@@ -46,8 +46,8 @@ const DiscoverValue: React.FC = () => {
                 <h2>Значение открытия</h2>
                 <div className="science_value_parent">
                 {
-                    data_science.map(scienceValue => (
-                        <ScienceValue props={scienceValue} />
+                    data_science.map((scienceValue, index) => (
+                        <ScienceValue key={index} props={scienceValue} />
                     ))
                 }
                 </div>

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import TripleFlexContainer from "../../components/TripleFlexContainer";
 import ShipImage from "../../components/ShipImage";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 const MapPreview: React.FC = () => {
     const text_container_ref = useRef<HTMLDivElement>(null)

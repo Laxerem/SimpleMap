@@ -51,8 +51,8 @@ export const ScienceValue: React.FC<PropsWithChildren<IScienceValue>> = ({props}
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
                     <ul className="science_value_list">
-                        {props.value.map(prop => (
-                            <li>{prop}</li>
+                        {props.value.map((prop, index) => (
+                            <li key={index}>{prop}</li>
                         ))}
                     </ul>
                 </motion.div>

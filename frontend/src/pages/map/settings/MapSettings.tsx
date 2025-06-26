@@ -10,7 +10,7 @@ const MapProps: MapContainerProps = {
 }
 
 const MapSettings: IMapSettings = {
-    listen_events: true,
+    listen_events: false,
     way_display: true,
     props: MapProps
 }

@@ -57,8 +57,6 @@ class WayCounter {
                 distance: point.distance
             }
         })
-
-        console.log(this)
     }
 
     public get_stage_by_distance(distance: number) {

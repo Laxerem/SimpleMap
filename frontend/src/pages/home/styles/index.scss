@@ -2,7 +2,7 @@
 
 :root {
     /* РАЗМЕРЫ КОНТЕЙНЕРОВ*/
-    --home-preview-height: 95vh;
+    --home-preview-height: 100vh;
 
     /* РАЗМЕРЫ ТЕКСТА */
     --home-name-size-min: 6rem;
@@ -69,6 +69,7 @@
     box-shadow: inset 0px -148px 59px -63px rgba(10,33,49,1);
     h3 {
         text-align: end;
+        margin-top: 2vh;
     }
 }
 

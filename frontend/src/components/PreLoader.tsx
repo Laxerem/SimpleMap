@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom"
 import { SlideText } from "./SlideText"
 import { AnimatePresence, motion } from "framer-motion"
 
-
 interface TextLoading {
     [url:string]: {
         messages: Array<string>
@@ -16,6 +15,9 @@ const text_loading: TextLoading = {
     },
     "/map": {
         messages: ['Прокладываем курс к Антарктиде...', "Рисуем контуры неизведанной земли..."]
+    },
+    "/atlas": {
+      messages: ["Откалываем айсберги", "Размораживаем пингвинов", "Измеряем градус холода"]
     }
 }
 
@@ -60,7 +62,6 @@ const PreLoader: React.FC = () => {
         timers.messages = setInterval(() => {
             setLoadingText(messages[message_index])
             message_index = next_index(message_index, messages.length)
-            console.log("Смена сообщения")
         }, MESSAGE_TIME)
 
         timers.loading = setTimeout(() => {

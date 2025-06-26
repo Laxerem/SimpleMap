@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header>
             <div className='header_container'>
-                <div className='logo image' 
+                <div className='logo image'
                 onClick={() => navigate('/home')}
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}

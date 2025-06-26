@@ -11,12 +11,11 @@ interface MissionStatsProps {
     summary: MissionStats
 }
 
-export const StatusCard: React.FC<PropsWithChildren<MissionStatsProps>> = ({summary}) => {
+export const StatusCard: React.FC<PropsWithChildren<MissionStatsProps>> = () => {
 
     return (
         <div className="mission_stats_container">
             <h1>Статус Экспедиции:</h1>
-            
         </div>
     )
 }

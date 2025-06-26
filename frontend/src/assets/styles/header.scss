@@ -33,7 +33,7 @@ header {
 }
 
 .logo {
-    background-image: url(../../public/logo.svg);
+    background-image: url(/logo.svg);
     background-size: 100%;
     height: 90%;
     width: 3vw;
@@ -41,7 +41,7 @@ header {
 }
 
 .catalog {
-    background-image: url(../../public/catalog.svg);
+    background-image: url(/catalog.svg);
     background-size: 100%;
     height: 90%;
     width: 2.5vw;
