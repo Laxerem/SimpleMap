@@ -7,13 +7,14 @@ import PreLoader from '../components/PreLoader'
 
 function Router() {
     return <BrowserRouter>
-    
+
     <Header/>
-    <PreLoader />
+    <PreLoader/>
         <Routes>
             <Route element={<Home />} path='/home' />
             <Route element={<MapPage />} path='/map' />
             <Route element={<AtlasPage />} path='/atlas'/>
+            <Route path="*" element={null} />
         </Routes>
     </BrowserRouter>
 }
