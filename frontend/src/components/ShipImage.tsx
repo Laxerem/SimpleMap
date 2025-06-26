@@ -6,9 +6,10 @@ interface ShipImageProps {
     hoverStyle?: MotionStyle
     style?: MotionStyle
     handleClick?: () => void
+    name?: string
 }
 
-const ShipImage: React.FC<PropsWithChildren<ShipImageProps>> = ({imageUrl, motionOptions, style, hoverStyle, handleClick}) => {
+const ShipImage: React.FC<PropsWithChildren<ShipImageProps>> = ({imageUrl, name, motionOptions, style, hoverStyle, handleClick}) => {
     const [isHover, setIsHover] = useState<boolean>(false)
 
     return (
@@ -25,7 +26,9 @@ const ShipImage: React.FC<PropsWithChildren<ShipImageProps>> = ({imageUrl, motio
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         onMouseDown={handleClick}
-        />
+        >
+        <h3>{name}</h3>
+        </motion.div>
     )
 }
 

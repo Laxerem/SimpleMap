@@ -23,7 +23,11 @@
 }
 
 .ship_image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     @extend %default_background_image;
     height: calc(25vh + 20vw);
     width: calc(15vh + 20vw);
+    transition: 1s;
 }

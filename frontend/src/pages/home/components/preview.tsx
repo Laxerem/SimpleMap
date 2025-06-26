@@ -76,6 +76,7 @@ const HomePresentation: React.FC<{ info: PreviewInfo }> = ({ info }) => {
           <h1 className="home_name">
             Открытие <br />
             Антарктиды
+            <h3>1820 год </h3>
           </h1>
           <div className="home_navigation">
             {blocks.map((block, index) => (

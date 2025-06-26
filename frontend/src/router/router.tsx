@@ -9,6 +9,7 @@ function Router() {
     return <BrowserRouter>
     
     <Header/>
+    <PreLoader />
         <Routes>
             <Route element={<Home />} path='/home' />
             <Route element={<MapPage />} path='/map' />
