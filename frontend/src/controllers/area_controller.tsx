@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, useEffect, useState } from "react"
 import { useMapContext } from "../context/map/map_context"
 import { AreaData, StageArea } from "../pages/map/settings/interface/IWaySettings"
-import { Polygon } from "react-leaflet"
+import { Polygon, Tooltip } from "react-leaflet"
 import { LatLngExpression, PolylineOptions } from "leaflet"
 import { useWayContext } from "../context/way/way_context"
 import WayObject from "../pages/map/way/way_object"
@@ -38,6 +38,8 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
 
     }, [polygons_area, zoomContext]);
 
+    useEffect
+
     const handle_click = (stage_id: number, view_coords: any) => {
         const coords: LatLngExpression = [view_coords[1], view_coords[0]]
 
@@ -64,7 +66,12 @@ const AreaController: React.FC<PropsWithChildren<AreaControllerProps>> = ({polyg
                     }}
                     {...(style || DefaultAreaStyle)}
                     >
-                    
+                    <Tooltip
+                    direction="top"
+                    className="custom_tooltip"
+                    >
+                        {key}
+                    </Tooltip>
                     </Polygon>
                 ))
             }

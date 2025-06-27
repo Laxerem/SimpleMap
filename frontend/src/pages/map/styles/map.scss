@@ -31,3 +31,12 @@
     width: calc(15vh + 20vw);
     transition: 1s;
 }
+
+.custom_tooltip {
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    box-shadow: none;
+}

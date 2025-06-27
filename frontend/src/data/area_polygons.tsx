@@ -6041,7 +6041,7 @@ export const areaPolygons: StageArea = {
           },
           stage_id: 6
         },
-        "Рио-Де-Жанейро": {
+        "Рио Де Жанейро": {
           dynamic_area: {
             8: {
               view_coords: [-43.1803808614294, -22.969953599943366],
