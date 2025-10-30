@@ -4,7 +4,7 @@ const RioBack = () => {
     return(
         <div className="stage_info_text">
             <h1>Возвращение в Рио</h1>
-            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="/rio-3.png"/>
+            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="rio-3.png"/>
             <p>
                 <b>Апрель 1821</b> – Заход в Рио-де-Жанейро.
             </p>

@@ -11,7 +11,7 @@ const KopengagenStage: React.FC = () => {
                 года</b> после перехода через Балтийское море из <span className="green">Кронштадта</span>.
             </p>
             <br></br>
-            <InfoImageContainer border_radius="20px" imageUrl="/KopengagenPort.png"/>
+            <InfoImageContainer border_radius="20px" imageUrl="KopengagenPort.png"/>
             <br></br>
             <p>
                 В <b>Копенгагене</b> экспедиция получила уточнённые инструкции от российского командования.

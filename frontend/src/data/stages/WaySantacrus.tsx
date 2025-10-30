@@ -5,7 +5,7 @@ import { TextToolTip } from "../../components/TextToolTip"
 const WaySantacrus: React.FC = () => {
     return (
         <div className="stage_info_text">
-            <InfoImageContainer border_radius="20px" imageUrl="/shtorm.png"/>
+            <InfoImageContainer border_radius="20px" imageUrl="shtorm.png"/>
             <br></br>
             <p>
                 <b>26 августа</b> отряд двинулся на <b>Тенерифе</b>, где надлежало запастись 
@@ -22,7 +22,7 @@ const WaySantacrus: React.FC = () => {
             background_hover_size="200%" 
             cursor_animation={true} 
             border_radius="20px" 
-            imageUrl="/sailors.png"/>
+            imageUrl="sailors.png"/>
             <p>В дождь и шторм следили за сменой одежды, сушили её на ветру.</p>
             <p>
                 По средам и пятницам проводили банно-постирочный день, стирали койки дважды в месяц, 

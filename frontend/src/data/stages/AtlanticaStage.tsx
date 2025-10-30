@@ -11,7 +11,7 @@ const AtlanticaStage: React.FC = () => {
                 Экспедиция Беллинсгаузена и Лазарева покинула <b>Санта-Крус</b> (Тенерифе) 
                 <b> в сентябре</b> <b>1819 года</b>, и двинулась переплывать <b>Атлантический океан</b>.
             </p>
-            <InfoImageContainer border_radius="20px" imageUrl="/Atlantica_sea.png"/>
+            <InfoImageContainer border_radius="20px" imageUrl="Atlantica_sea.png"/>
             <h2>Организация</h2>
             <p>
                 Шлюпы держались в пределах видимости друг друга. <b>«Восток»</b> был быстрее, 

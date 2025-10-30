@@ -28,7 +28,7 @@ const TextContent: React.FC = () => {
 const content: EndBlockContent = {
     header: "Дорога к открытию",
     TextContent: TextContent,
-    imageUrl: "/ship.png"
+    imageUrl: "ship.png"
 }
 
 const Prehistory: React.FC = () => {

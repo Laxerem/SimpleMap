@@ -5,7 +5,7 @@ const SidneyStage: React.FC = () => {
 
     return (
         <div className="stage_info_text">
-            <InfoImageContainer border_radius="20px" imageUrl="/sidney.png"/>
+            <InfoImageContainer border_radius="20px" imageUrl="sidney.png"/>
             <p>
                 <b>28 марта «Восток»</b> под командованием Беллинсгаузена вошёл 
                 в <b>Порт-Джексон</b>, а <b>7 апреля</b> прибыл <b>«Мирный»</b>.

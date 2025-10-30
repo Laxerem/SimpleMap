@@ -4,7 +4,7 @@ import InfoImageContainer from "../../components/InfoImageContainer"
 const LisabonStage: React.FC = () => {
     return(
         <div className="stage_info_text">
-            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="/lisabon.png"/>
+            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="lisabon.png"/>
             <p>
                 Шлюпы <b>«Восток»</b> и <b>«Мирный»</b> прибыли в <b>Лиссабон 2 июня 1821 года </b> 
                 после <b>45-дневного</b> перехода из <span className="yellow">Рио-де-Жанейро</span>. 

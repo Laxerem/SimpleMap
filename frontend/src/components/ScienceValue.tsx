@@ -32,7 +32,7 @@ export const ScienceValue: React.FC<PropsWithChildren<IScienceValue>> = ({props}
                 onMouseUp={() => setClick(click + 1)}
                 style={{
                     cursor: "pointer",
-                    backgroundImage: isOpen ? `url('/bottom.svg')` : undefined,
+                    backgroundImage: isOpen ? `url('bottom.svg')` : undefined,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center bottom',
                     backgroundColor: 'rgb(255, 255, 255)',

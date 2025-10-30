@@ -17,7 +17,7 @@ const ExpeditionEnd: React.FC = () => {
                 Беллинсгаузена, командира Шлюпа Востока. Шлюпом Мирным начальствовал лейтенант Лазарев."> «Двукратные изыскания в Южном Ледовитом океане 
                 и плавание вокруг света»</TextToolTip> с атласом рисунков.
             </p>
-            <InfoImageContainer border_radius="20px" imageUrl="/TheEnd.gif" />
+            <InfoImageContainer border_radius="20px" imageUrl="TheEnd.gif" />
             <h2>Пройденный путь</h2>
             <p>
                 Было пройдено в общей сложности <b>4 тыс. 972 мили</b> — путь, в два с четвертью раза 
@@ -27,7 +27,7 @@ const ExpeditionEnd: React.FC = () => {
                 Плавание продолжалось <b>751 сутки</b>, из них шлюпы находились на ходу <b>527 дней</b>, причем 
                 <b> 122 дня</b> южнее 60-й параллели и <b>100 дней</b> во льдах.
             </p>
-            <InfoImageContainer border_radius="20px" imageUrl="/TheEnd-2.gif" />
+            <InfoImageContainer border_radius="20px" imageUrl="TheEnd-2.gif" />
             <h2>Итоги экспедиции</h2>
             <p>
                 Первая русская антарктическая экспедиция <b>Ф. Ф. Беллинсгаузена</b> и <b>М. П. Лазарева</b>, 

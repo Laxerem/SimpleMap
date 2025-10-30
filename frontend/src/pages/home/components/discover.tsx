@@ -24,8 +24,8 @@ const Discoverer: React.FC<IDiscover> = ({discover}) => {
         <div className={discover.image_class}
         style={{
             backgroundImage: 
-            isHovered ? `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/${discover.image_name})`
-            : `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(/${discover.image_name})`
+            isHovered ? `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${discover.image_name})`
+            : `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${discover.image_name})`
         }}
         >
             <div className="discover_image_content"

@@ -12,7 +12,7 @@ const ByeSidney = () => {
                 Экспедиция достигла острова <b>Маккуори</b>, расположенного в <b>Южном океане</b>. 
                 Остров был открыт в <b>1810 году</b> <TextToolTip content="Фредерик Хасселборо — австралийский капитан и морской зверобой из Сиднея. В 1810 году открыл в южной части Тихого океана острова Кэмпбелл и Маккуори.">Фредериком Хасселбором</TextToolTip>.
             </p>
-            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="/macuory.png"/>
+            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="macuory.png"/>
             <p>
                 Из-за сильного прибоя и скалистых берегов русские моряки не смогли высадиться на остров, 
                 ограничились наблюдением с борта. Это была краткая остановка для изучения фауны и 

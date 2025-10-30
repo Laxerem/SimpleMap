@@ -15,7 +15,7 @@ const WayAustralia: React.FC = () => {
                 <b>4 марта 1820 года</b> разделились: <b>«Восток»</b> направился в Сидней, <b>«Мирный»</b> исследовал 
                 воды южнее Тасмании.
             </p>
-            <InfoImageContainer border_radius="20px" imageUrl="/sourth_ocean-3.png"/>
+            <InfoImageContainer border_radius="20px" imageUrl="sourth_ocean-3.png"/>
             <br></br>
             <h3>Путь <b>«Востока»</b></h3>
             <p>

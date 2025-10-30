@@ -18,14 +18,14 @@ const MapPreview: React.FC = () => {
         style={{
             marginTop: "20vh", 
             padding: 0, 
-            backgroundImage: "url(/waves2.svg)", 
+            backgroundImage: "url(waves2.svg)", 
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom",
             backgroundSize: "100%",
             transition: '1s'
         }}
         style_mob={{padding: 0}}>
-            <ShipImage name="Восток" imageUrl="/ship_3.png" 
+            <ShipImage name="Восток" imageUrl="ship_3.png" 
             motionOptions={{
                 initial: { backgroundPosition: "2000% 0" },
                 animate: { backgroundPosition: "100% 0" },
@@ -83,7 +83,7 @@ const MapPreview: React.FC = () => {
                 </p>
                 </motion.div>
             </div>
-            <ShipImage name="Мирный" imageUrl="/ship_4.png" 
+            <ShipImage name="Мирный" imageUrl="ship_4.png" 
             motionOptions={{
                 initial: { backgroundPosition: "-3000% 0" },
                 animate: { backgroundPosition: "0% 0" },

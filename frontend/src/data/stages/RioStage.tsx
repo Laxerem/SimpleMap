@@ -11,7 +11,7 @@ const RioStage: React.FC = () => {
             cursor_animation={true}
             background_hover_size="220%" 
             border_radius="20px" 
-            imageUrl="/rio.png"/>
+            imageUrl="rio.png"/>
             <br></br>
             <p>
                 Шлюпы <b>«Восток»</b> и <b>«Мирный»</b> прибыли <b>2 ноября 1819 года </b> 
@@ -45,7 +45,7 @@ const RioStage: React.FC = () => {
                 <li>
                     <b>Экскурсии офицеров:</b>
                     <br></br>
-                    Офицеры посетили кофейные плантации и водопад <TextToolTip image="/tishuka.png" content="Водопад Тижука, 
+                    Офицеры посетили кофейные плантации и водопад <TextToolTip image="tishuka.png" content="Водопад Тижука, 
                     расположенный в Национальном парке Тижука в Рио-де-Жанейро, 
                     является одним из самых известных водопадов в этом парке.">Тижука</TextToolTip>, 
                     что не только подняло их моральный дух, 

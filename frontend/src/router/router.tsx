@@ -1,22 +1,22 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import Home from '../pages/home'
 import MapPage from '../pages/map'
 import AtlasPage from '../pages/atlas'
 import Header from '../components/header'
-import PreLoader from '../components/PreLoader'
 
 function Router() {
-    return <BrowserRouter>
-
+    return (
+    <BrowserRouter basename='/lastland.github.io'>
     <Header/>
-    <PreLoader/>
         <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} />
             <Route element={<Home />} path='/home' />
             <Route element={<MapPage />} path='/map' />
             <Route element={<AtlasPage />} path='/atlas'/>
             <Route path="*" element={null} />
         </Routes>
     </BrowserRouter>
+    )
 }
 
 export default Router

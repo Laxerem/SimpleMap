@@ -13,7 +13,7 @@ const SantacrusStage: React.FC = () => {
                 <b> 15 (27) сентября 1819 года</b>.
             </p>
             <br></br>
-            <InfoImageContainer border_radius="20px" imageUrl="/tenerife_stage.png"/>
+            <InfoImageContainer border_radius="20px" imageUrl="tenerife_stage.png"/>
             <br></br>
             <p>
                 Визит в <b>Санта-Крус</b> был технической остановкой для подготовки к длительному 
@@ -49,7 +49,7 @@ const SantacrusStage: React.FC = () => {
                     получил повреждения, но <b>Лазарев</b> смог его отремонтировать в море.
                 </li>
                 <li>
-                    <b>Восхождение на <TextToolTip image="/Taide.png" content="Те́йде (исп. Teide) — вулкан на острове Тенерифе, муниципалитет Ла-Оротава, самая высокая точка Испании, центр Национального парка Тейде.">вулкан Тейде:</TextToolTip></b>
+                    <b>Восхождение на <TextToolTip image="Taide.png" content="Те́йде (исп. Teide) — вулкан на острове Тенерифе, муниципалитет Ла-Оротава, самая высокая точка Испании, центр Национального парка Тейде.">вулкан Тейде:</TextToolTip></b>
                     <br></br> 
                     Несколько офицеров (включая астронома экспедиции 
                     <b> Ивана Симонова</b>) поднялись на вершину вулкана, 

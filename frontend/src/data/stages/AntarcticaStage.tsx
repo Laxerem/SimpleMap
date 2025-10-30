@@ -18,7 +18,7 @@ const AntarcticaStage: React.FC = () => {
                     Русские шлюпы <b>«Восток»</b> и <b>«Мирный»</b> приблизились к неизвестному ледяному массиву.
                     Однако из-за льдов высадиться не удалось.
                 </p>
-                <InfoImageContainer border_radius="20px" imageUrl="/antarctica_stage.gif"/>
+                <InfoImageContainer border_radius="20px" imageUrl="antarctica_stage.gif"/>
                 <br></br>
                 <p> 
                     В точке с координатами <b>69°21′</b> южной широты и <b>2°14′</b> западной долготы участники 
@@ -33,7 +33,7 @@ const AntarcticaStage: React.FC = () => {
                     border_radius={"20px"} 
                     cursor_animation={true}
                     background_hover_size="200%"
-                    imageUrl="/marta_shore.png"
+                    imageUrl="marta_shore.png"
                 />
                 <br></br>
                 <span className="quote">

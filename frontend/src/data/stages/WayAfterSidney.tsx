@@ -12,10 +12,10 @@ const WayAfterSidney: React.FC = () => {
                 <b> Тихом океане</b>, исследуя острова и собирая научные данные.
             </p>
             <br></br>
-            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="/QueenBay.png"/>
+            <InfoImageContainer background_hover_size="200%" cursor_animation={true} border_radius="20px" imageUrl="QueenBay.png"/>
             <p>
                 <b>27 мая – 8 июня</b> они посетили <b>залив Королевы Шарлотты</b> (Новая Зеландия). 
-                Встречи с <TextToolTip image="/maory.png" content="Ма́ори — коренной народ Новой Зеландии и основное население страны до прибытия европейцев.">маори</TextToolTip>, 
+                Встречи с <TextToolTip image="maory.png" content="Ма́ори — коренной народ Новой Зеландии и основное население страны до прибытия европейцев.">маори</TextToolTip>, 
                 сбор этнографических данных, закупка продовольствия.
             </p>
 
@@ -38,7 +38,7 @@ const WayAfterSidney: React.FC = () => {
             <h3>Полинезия (острова Тихого океана)</h3>
             <ul>
                 <li>
-                    На Таити изучали культуру <TextToolTip image="/polineisy.png" content="Полинезийцы — группа родственных народов, населяющих острова Полинезии в Тихом океане.">полинезийцев</TextToolTip>, их социальную структуру, религию, танцы и ремёсла.
+                    На Таити изучали культуру <TextToolTip image="polineisy.png" content="Полинезийцы — группа родственных народов, населяющих острова Полинезии в Тихом океане.">полинезийцев</TextToolTip>, их социальную структуру, религию, танцы и ремёсла.
                 </li>
                 <li>
                     Уточнили координаты островов, особенно в архипелаге Туамоту.

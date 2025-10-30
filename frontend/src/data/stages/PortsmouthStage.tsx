@@ -6,7 +6,7 @@ const PortsmouthStage: React.FC = () => {
     return (
         <div className="stage_info_text">
             <h1>Остановка в Портсмуте</h1>
-            <InfoImageContainer border_radius="20px" imageUrl="/England_stage.gif"/>
+            <InfoImageContainer border_radius="20px" imageUrl="England_stage.gif"/>
             <br></br>
             <p>
                 Шлюпы <b>«Восток»</b> и <b>«Мирный»</b> достигли

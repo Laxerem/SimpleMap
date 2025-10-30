@@ -25,7 +25,7 @@ const ShipSettings: React.FC = () => {
             isClicked ? {
                 transform: "scaleX(-1)",
                 borderRadius: "0px 0px 20px 0px",
-                backgroundImage: "url(/compass.png)",
+                backgroundImage: "url(compass.png)",
                 backgroundColor: "rgba(255,255,255, 0.8)"
             } : {}
         }>

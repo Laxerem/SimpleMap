@@ -6,7 +6,7 @@ const WayAntarctica: React.FC = () => {
     return (
         <div className="stage_info_text">
             <h1></h1>
-            <InfoImageContainer border_radius="20px" imageUrl="/sourth_ocean-2.png"/>
+            <InfoImageContainer border_radius="20px" imageUrl="sourth_ocean-2.png"/>
             <br></br>
             <p>
                 <b>20 ноября 1819 года</b>, после 20-дневной стоянки, шлюпы <b>«Восток»</b> и «Мирный» покинули порт,
@@ -14,7 +14,7 @@ const WayAntarctica: React.FC = () => {
             </p>
             <p>
                 Экспедиция столкнулась с трудностями, включая плотные льды, туманы и холодные температуры. 
-                <b> 15 января 1820 года</b> пересекли <TextToolTip image="/antarctica_round.png" content="Южный полярный круг обозначает северную границу области полярного дня и полярной ночи.">Антарктический круг</TextToolTip> (66° ю.ш., 3° з.д.).
+                <b> 15 января 1820 года</b> пересекли <TextToolTip image="antarctica_round.png" content="Южный полярный круг обозначает северную границу области полярного дня и полярной ночи.">Антарктический круг</TextToolTip> (66° ю.ш., 3° з.д.).
             </p>
             
             <h2>Условия и вызовы</h2>

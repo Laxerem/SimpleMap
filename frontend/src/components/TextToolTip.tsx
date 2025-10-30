@@ -35,7 +35,7 @@ export const TextToolTip: React.FC<PropsWithChildren<TextToolTipProps>> = ({chil
             }}
             style={{
                 background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('/blue_gradient.png') center/cover no-repeat`,
+                url('blue_gradient.png') center/cover no-repeat`,
                 backgroundSize: "cover",
                 color: "white",
                 fontFamily: "Montserrat",

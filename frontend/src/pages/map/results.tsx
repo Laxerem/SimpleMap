@@ -21,7 +21,7 @@ const TextResults: React.FC = () => {
 const content: EndBlockContent = {
     header: "Итоги Экспедиции",
     TextContent: TextResults,
-    imageUrl: "/ship_2.png"
+    imageUrl: "ship_2.png"
 }
 
 const ResultsExpedition: React.FC = () => {

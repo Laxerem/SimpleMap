@@ -23,7 +23,7 @@ import ExpeditionEnd from "./stages/ExpeditionEnd"
 
 export const DefaultStageStyle: CSSProperties = {
     background:`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('/blue_gradient.png') center/cover no-repeat`,
+                url('blue_gradient.png') center/cover no-repeat`,
     backgroundSize: "100%",
     animation: "gradientMove 20s ease-in-out infinite"
 }
@@ -40,7 +40,7 @@ export const stages: Stages = {
         },
         box_style: {
             background:`linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                url('/Kronshtat_ship.png') center/cover no-repeat`,
+                url('Kronshtat_ship.png') center/cover no-repeat`,
             backgroundSize: "100%",
             animation: "gradientMoveCenterBottom 20s ease-in-out infinite"
         }
@@ -81,7 +81,7 @@ export const stages: Stages = {
         },
         box_style: {
             background: `
-                url('/sea.gif') center/cover no-repeat`
+                url('sea.gif') center/cover no-repeat`
         }
     },
     8: {
@@ -99,7 +99,7 @@ export const stages: Stages = {
         },
         box_style: {
             background: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-            url('/southern_ocean.png') center/cover no-repeat`,
+            url('southern_ocean.png') center/cover no-repeat`,
             backgroundSize: "100%",
             animation: "gradientMoveCenterBottom 40s ease-in-out infinite"
         }
@@ -115,7 +115,7 @@ export const stages: Stages = {
         },
         box_style: {
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-                url('/antarctica_stage.jpeg')`,
+                url('antarctica_stage.jpeg')`,
             backgroundSize: "cover",
             animation: "gradientSlowMove 20s ease-in-out infinite"
         }
@@ -128,7 +128,7 @@ export const stages: Stages = {
         },
         box_style: {
             background: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-            url('/southern_ocean.png') center/cover no-repeat`,
+            url('southern_ocean.png') center/cover no-repeat`,
             backgroundSize: "100%",
             animation: "gradientMoveCenterBottom 40s ease-in-out infinite"
         }
@@ -148,7 +148,7 @@ export const stages: Stages = {
         },
         box_style: {
             background: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-            url('/ocean.png') center/cover no-repeat`,
+            url('ocean.png') center/cover no-repeat`,
             backgroundSize: "100%",
             animation: "gradientMoveCenterBottom 40s ease-in-out infinite"
         }
@@ -189,7 +189,7 @@ export const stages: Stages = {
         },
         box_style: {
             background: `
-                url('/sea.gif') center/cover no-repeat`
+                url('sea.gif') center/cover no-repeat`
         }
     },
     19: {
