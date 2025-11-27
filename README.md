@@ -1,5 +1,8 @@
 # SimpleMap
 
+> [!FAQ]
+> This project has been published, and you can see it there: https://laxerem.github.io/lastland.github.io/home
+
 ## How to build
 
 ### 1. Clone this repository
