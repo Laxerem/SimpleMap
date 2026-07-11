@@ -6,7 +6,7 @@ import Header from '../components/header'
 
 function Router() {
     return (
-    <BrowserRouter basename='/lastland.github.io'>
+    <BrowserRouter basename='/SimpleMap'>
     <Header/>
         <Routes>
             <Route path="/" element={<Navigate to="/home" replace />} />
