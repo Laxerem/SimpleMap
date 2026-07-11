@@ -109,7 +109,7 @@ const PreLoader: React.FC = () => {
               >
                 <motion.img
                     className="loading_image"
-                    src="/loading_bar.gif"
+                    src="loading_bar.gif"
                     animate={{
                         y: [0, -10, 0, 10, 0],
                         rotate: [0, 5, 0, -5, 0]
