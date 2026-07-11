@@ -17,7 +17,7 @@ const Ship: React.FC<PropsWithChildren<ShipProps>> = ({coords, icon, name}) => {
     }
 
     const defaultIcon = L.icon({
-        iconUrl: "/animated_dot.svg",
+        iconUrl: "animated_dot.svg",
         iconSize: [40, 40],
         iconAnchor: [20, 20],
     });

@@ -11,9 +11,9 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 60%;
-    min-width: 300px;
-    padding: 20px 10px 20px 30px;
+    width: 90%;
+    min-width: 260px;
+    padding: 20px 20px 20px 30px;
     border-radius: 20px;
     border: 2px solid #63C1F1;
     background-color: #07131F;
@@ -21,17 +21,20 @@
 
 .science_value_container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     width: 100%;
 }
 
 .science_name {
-    width: 90%;
-    text-align: center;
+    text-align: left;
 }
 
 .value_button {
-    width: 2.5vw;
-    height: 2.5vw;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     background: url('/src/assets/images/Up.svg') no-repeat center bottom, rgb(255, 255, 255);
     background-size: 60%;

@@ -174,9 +174,10 @@
 .antarctica_content {
     @include flex_default($align: flex-start);
     box-sizing: border-box;
+    max-width: 1100px;
+    margin: 7% auto 0;
     padding: 0 2%;
     gap: 5%;
-    margin-top: 7%;
 }
 
 .block_facts {
