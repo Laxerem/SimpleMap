@@ -1,7 +1,7 @@
 # SimpleMap
 
 > [!FAQ]
-> This project has been published, and you can see it there: https://laxerem.github.io/lastland.github.io/home
+> This project has been published, and you can see it there: https://laxerem.github.io/SimpleMap
 
 ## How to build
 
